@@ -1,0 +1,426 @@
+31/10 09:45:23 SMS Tranceiver started
+31/10 09:45:23 Start binding to SMSC server....
+31/10 09:45:23 Binding with bind-mode: tr and sync-mode: a
+31/10 09:45:23 Bind request (bindreq: bsmseone GEN 52 (addrrang: 1 1 22268) ) 
+31/10 09:45:23 Bind response (bindresp: (pdu: 30 80000009 0 1) bsmseone 52) 
+31/10 09:45:23 Start receiver process 0
+31/10 09:45:23 Start transmitter process 0
+31/10 09:45:23 Start receiver process 1
+31/10 09:45:23 Start transmitter process 1
+31/10 09:45:23 Enquire Link request (enquirelink: (pdu: 0 15 0 [2]) ) 
+31/10 09:45:23 (enquirelink_resp: (pdu: 16 80000015 0 2) ) 
+31/10 09:45:28 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 530905841) ) 
+31/10 09:45:28 Received unknown data 2: (enquirelink: (pdu: 16 15 0 530905841) ) 
+31/10 09:45:33 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 530925029) ) 
+31/10 09:45:33 Received unknown data 2: (enquirelink: (pdu: 16 15 0 530925029) ) 
+31/10 09:45:33 Enquire Link request (enquirelink: (pdu: 0 15 0 [3]) ) 
+31/10 09:45:33 (enquirelink_resp: (pdu: 16 80000015 0 3) ) 
+31/10 09:45:38 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 530944201) ) 
+31/10 09:45:38 Received unknown data 2: (enquirelink: (pdu: 16 15 0 530944201) ) 
+31/10 09:45:43 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 530963499) ) 
+31/10 09:45:43 Received unknown data 2: (enquirelink: (pdu: 16 15 0 530963499) ) 
+31/10 09:45:43 Enquire Link request (enquirelink: (pdu: 0 15 0 [4]) ) 
+31/10 09:45:43 (enquirelink_resp: (pdu: 16 80000015 0 4) ) 
+31/10 09:45:48 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 530982674) ) 
+31/10 09:45:48 Received unknown data 2: (enquirelink: (pdu: 16 15 0 530982674) ) 
+31/10 09:45:53 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531001848) ) 
+31/10 09:45:53 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531001848) ) 
+31/10 09:45:53 Enquire Link request (enquirelink: (pdu: 0 15 0 [5]) ) 
+31/10 09:45:53 (enquirelink_resp: (pdu: 16 80000015 0 5) ) 
+31/10 09:45:58 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531020931) ) 
+31/10 09:45:58 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531020931) ) 
+31/10 09:46:03 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531040098) ) 
+31/10 09:46:03 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531040098) ) 
+31/10 09:46:03 Enquire Link request (enquirelink: (pdu: 0 15 0 [6]) ) 
+31/10 09:46:03 (enquirelink_resp: (pdu: 16 80000015 0 6) ) 
+31/10 09:46:08 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531059153) ) 
+31/10 09:46:08 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531059153) ) 
+31/10 09:46:13 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531078380) ) 
+31/10 09:46:13 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531078380) ) 
+31/10 09:46:13 Enquire Link request (enquirelink: (pdu: 0 15 0 [7]) ) 
+31/10 09:46:13 (enquirelink_resp: (pdu: 16 80000015 0 7) ) 
+31/10 09:46:18 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531097562) ) 
+31/10 09:46:18 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531097562) ) 
+31/10 09:46:23 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531116766) ) 
+31/10 09:46:23 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531116766) ) 
+31/10 09:46:23 Enquire Link request (enquirelink: (pdu: 0 15 0 [8]) ) 
+31/10 09:46:23 (enquirelink_resp: (pdu: 16 80000015 0 8) ) 
+31/10 09:46:28 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531135907) ) 
+31/10 09:46:28 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531135907) ) 
+31/10 09:46:33 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531155174) ) 
+31/10 09:46:33 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531155174) ) 
+31/10 09:46:33 Enquire Link request (enquirelink: (pdu: 0 15 0 [9]) ) 
+31/10 09:46:33 (enquirelink_resp: (pdu: 16 80000015 0 9) ) 
+31/10 09:46:38 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531174323) ) 
+31/10 09:46:38 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531174323) ) 
+31/10 09:46:44 SMS Tranceiver started
+31/10 09:46:44 Start binding to SMSC server....
+31/10 09:46:44 Binding with bind-mode: tr and sync-mode: a
+31/10 09:46:44 Bind request (bindreq: bsmseone GEN 52 (addrrang: 1 1 22268) ) 
+31/10 09:46:44 Bind response (bindresp: (pdu: 30 80000009 0 1) bsmseone 52) 
+31/10 09:46:44 Start receiver process 0
+31/10 09:46:44 Start transmitter process 0
+31/10 09:46:44 Start receiver process 1
+31/10 09:46:44 Start transmitter process 1
+31/10 09:46:44 Enquire Link request (enquirelink: (pdu: 0 15 0 [2]) ) 
+31/10 09:46:44 (enquirelink_resp: (pdu: 16 80000015 0 2) ) 
+31/10 09:46:49 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531215964) ) 
+31/10 09:46:49 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531215964) ) 
+31/10 09:46:54 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531235143) ) 
+31/10 09:46:54 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531235143) ) 
+31/10 09:46:54 Enquire Link request (enquirelink: (pdu: 0 15 0 [3]) ) 
+31/10 09:46:54 (enquirelink_resp: (pdu: 16 80000015 0 3) ) 
+31/10 09:46:59 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531254325) ) 
+31/10 09:46:59 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531254325) ) 
+31/10 09:47:04 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531273576) ) 
+31/10 09:47:04 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531273576) ) 
+31/10 09:47:04 Enquire Link request (enquirelink: (pdu: 0 15 0 [4]) ) 
+31/10 09:47:04 (enquirelink_resp: (pdu: 16 80000015 0 4) ) 
+31/10 09:47:09 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531292763) ) 
+31/10 09:47:09 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531292763) ) 
+31/10 09:47:14 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531311964) ) 
+31/10 09:47:14 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531311964) ) 
+31/10 09:47:14 Enquire Link request (enquirelink: (pdu: 0 15 0 [5]) ) 
+31/10 09:47:14 (enquirelink_resp: (pdu: 16 80000015 0 5) ) 
+31/10 09:47:19 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531331149) ) 
+31/10 09:47:19 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531331149) ) 
+31/10 09:47:24 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531350388) ) 
+31/10 09:47:24 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531350388) ) 
+31/10 09:47:24 Enquire Link request (enquirelink: (pdu: 0 15 0 [6]) ) 
+31/10 09:47:24 (enquirelink_resp: (pdu: 16 80000015 0 6) ) 
+31/10 09:47:29 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531369529) ) 
+31/10 09:47:29 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531369529) ) 
+31/10 09:47:34 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531388739) ) 
+31/10 09:47:34 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531388739) ) 
+31/10 09:47:34 Enquire Link request (enquirelink: (pdu: 0 15 0 [7]) ) 
+31/10 09:47:34 (enquirelink_resp: (pdu: 16 80000015 0 7) ) 
+31/10 09:47:39 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531407993) ) 
+31/10 09:47:39 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531407993) ) 
+31/10 09:47:44 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531427164) ) 
+31/10 09:47:44 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531427164) ) 
+31/10 09:47:44 Enquire Link request (enquirelink: (pdu: 0 15 0 [8]) ) 
+31/10 09:47:44 (enquirelink_resp: (pdu: 16 80000015 0 8) ) 
+31/10 09:47:49 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531446339) ) 
+31/10 09:47:49 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531446339) ) 
+31/10 09:47:54 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531465520) ) 
+31/10 09:47:54 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531465520) ) 
+31/10 09:47:54 Enquire Link request (enquirelink: (pdu: 0 15 0 [9]) ) 
+31/10 09:47:54 (enquirelink_resp: (pdu: 16 80000015 0 9) ) 
+31/10 09:47:59 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531484725) ) 
+31/10 09:47:59 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531484725) ) 
+31/10 09:48:04 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531503969) ) 
+31/10 09:48:04 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531503969) ) 
+31/10 09:48:04 Enquire Link request (enquirelink: (pdu: 0 15 0 [10]) ) 
+31/10 09:48:04 (enquirelink_resp: (pdu: 16 80000015 0 10) ) 
+31/10 09:48:09 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531523131) ) 
+31/10 09:48:09 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531523131) ) 
+31/10 09:48:14 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531542341) ) 
+31/10 09:48:14 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531542341) ) 
+31/10 09:48:14 Enquire Link request (enquirelink: (pdu: 0 15 0 [11]) ) 
+31/10 09:48:14 (enquirelink_resp: (pdu: 16 80000015 0 11) ) 
+31/10 09:48:19 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531561415) ) 
+31/10 09:48:19 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531561415) ) 
+31/10 09:48:24 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531580508) ) 
+31/10 09:48:24 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531580508) ) 
+31/10 09:48:24 Enquire Link request (enquirelink: (pdu: 0 15 0 [12]) ) 
+31/10 09:48:24 (enquirelink_resp: (pdu: 16 80000015 0 12) ) 
+31/10 09:48:29 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531599682) ) 
+31/10 09:48:29 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531599682) ) 
+31/10 09:48:34 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531618775) ) 
+31/10 09:48:34 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531618775) ) 
+31/10 09:48:34 Enquire Link request (enquirelink: (pdu: 0 15 0 [13]) ) 
+31/10 09:48:34 (enquirelink_resp: (pdu: 16 80000015 0 13) ) 
+31/10 09:48:39 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531637846) ) 
+31/10 09:48:39 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531637846) ) 
+31/10 09:48:44 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531656986) ) 
+31/10 09:48:44 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531656986) ) 
+31/10 09:48:44 Enquire Link request (enquirelink: (pdu: 0 15 0 [14]) ) 
+31/10 09:48:44 (enquirelink_resp: (pdu: 16 80000015 0 14) ) 
+31/10 09:48:49 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531676016) ) 
+31/10 09:48:49 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531676016) ) 
+31/10 09:48:54 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531695170) ) 
+31/10 09:48:54 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531695170) ) 
+31/10 09:48:54 Enquire Link request (enquirelink: (pdu: 0 15 0 [15]) ) 
+31/10 09:48:54 (enquirelink_resp: (pdu: 16 80000015 0 15) ) 
+31/10 09:48:59 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 531714284) ) 
+31/10 09:48:59 Received unknown data 2: (enquirelink: (pdu: 16 15 0 531714284) ) 
+31/10 09:51:02 SMS Tranceiver started
+31/10 09:51:02 Start binding to SMSC server....
+31/10 09:51:02 Binding with bind-mode: tr and sync-mode: a
+31/10 09:51:02 Bind request (bindreq: bsmseone GEN 52 (addrrang: 1 1 22268) ) 
+31/10 09:51:02 Bind response (bindresp: (pdu: 30 80000009 0 1) bsmseone 52) 
+31/10 09:51:02 Start receiver process 0
+31/10 09:51:02 Start transmitter process 0
+31/10 09:51:02 Start receiver process 1
+31/10 09:51:02 Start transmitter process 1
+31/10 09:51:02 Enquire Link request (enquirelink: (pdu: 0 15 0 [2]) ) 
+31/10 09:51:02 (enquirelink_resp: (pdu: 16 80000015 0 2) ) 
+31/10 09:51:06 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 532200225) ) 
+31/10 09:51:06 Received unknown data 2: (enquirelink: (pdu: 16 15 0 532200225) ) 
+31/10 09:51:11 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 532219424) ) 
+31/10 09:51:11 Received unknown data 2: (enquirelink: (pdu: 16 15 0 532219424) ) 
+31/10 09:51:12 Enquire Link request (enquirelink: (pdu: 0 15 0 [3]) ) 
+31/10 09:51:12 (enquirelink_resp: (pdu: 16 80000015 0 3) ) 
+31/10 09:51:16 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 532238632) ) 
+31/10 09:51:16 Received unknown data 2: (enquirelink: (pdu: 16 15 0 532238632) ) 
+31/10 09:51:21 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 532257817) ) 
+31/10 09:51:21 Received unknown data 2: (enquirelink: (pdu: 16 15 0 532257817) ) 
+31/10 09:51:22 Enquire Link request (enquirelink: (pdu: 0 15 0 [4]) ) 
+31/10 09:51:22 (enquirelink_resp: (pdu: 16 80000015 0 4) ) 
+31/10 09:51:26 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 532276943) ) 
+31/10 09:51:26 Received unknown data 2: (enquirelink: (pdu: 16 15 0 532276943) ) 
+31/10 09:53:01 SMS Tranceiver started
+31/10 09:53:01 Start binding to SMSC server....
+31/10 09:53:01 Binding with bind-mode: tr and sync-mode: a
+31/10 09:53:01 Bind request (bindreq: bsmseone GEN 52 (addrrang: 1 1 22268) ) 
+31/10 09:53:01 Bind response (bindresp: (pdu: 30 80000009 0 1) bsmseone 52) 
+31/10 09:53:01 Start receiver process 0
+31/10 09:53:01 Start transmitter process 0
+31/10 09:53:01 Start receiver process 1
+31/10 09:53:01 Start transmitter process 1
+31/10 09:53:01 Enquire Link request (enquirelink: (pdu: 0 15 0 [2]) ) 
+31/10 09:53:01 (enquirelink_resp: (pdu: 16 80000015 0 2) ) 
+31/10 09:53:05 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 532654594) ) 
+31/10 09:53:05 Received unknown data 2: (enquirelink: (pdu: 16 15 0 532654594) ) 
+31/10 09:53:10 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 532673735) ) 
+31/10 09:53:10 Received unknown data 2: (enquirelink: (pdu: 16 15 0 532673735) ) 
+31/10 09:53:11 Enquire Link request (enquirelink: (pdu: 0 15 0 [3]) ) 
+31/10 09:53:11 (enquirelink_resp: (pdu: 16 80000015 0 3) ) 
+31/10 09:53:29 SMS Tranceiver started
+31/10 09:53:29 Start binding to SMSC server....
+31/10 09:53:29 Binding with bind-mode: tr and sync-mode: a
+31/10 09:53:29 Bind request (bindreq: bsmseone GEN 52 (addrrang: 1 1 22268) ) 
+31/10 09:53:29 Bind response (bindresp: (pdu: 30 80000009 0 1) bsmseone 52) 
+31/10 09:53:29 Start receiver process 0
+31/10 09:53:29 Start transmitter process 0
+31/10 09:53:29 Start receiver process 1
+31/10 09:53:29 Start transmitter process 1
+31/10 09:53:29 Enquire Link request (enquirelink: (pdu: 0 15 0 [2]) ) 
+31/10 09:53:29 (enquirelink_resp: (pdu: 16 80000015 0 2) ) 
+31/10 09:53:33 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 532761097) ) 
+31/10 09:53:33 Received unknown data 2: (enquirelink: (pdu: 16 15 0 532761097) ) 
+31/10 09:53:38 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 532780229) ) 
+31/10 09:53:38 Received unknown data 2: (enquirelink: (pdu: 16 15 0 532780229) ) 
+31/10 09:53:39 Enquire Link request (enquirelink: (pdu: 0 15 0 [3]) ) 
+31/10 09:53:39 (enquirelink_resp: (pdu: 16 80000015 0 3) ) 
+31/10 09:54:09 SMS Tranceiver started
+31/10 09:54:09 Start binding to SMSC server....
+31/10 09:54:09 Binding with bind-mode: tr and sync-mode: a
+31/10 09:54:09 Bind request (bindreq: bsmseone GEN 52 (addrrang: 1 1 22268) ) 
+31/10 09:54:09 Bind response (bindresp: (pdu: 30 80000009 0 1) bsmseone 52) 
+31/10 09:54:09 Start receiver process 0
+31/10 09:54:09 Start transmitter process 0
+31/10 09:54:09 Start receiver process 1
+31/10 09:54:09 Start transmitter process 1
+31/10 09:54:09 Enquire Link request (enquirelink: (pdu: 0 15 0 [2]) ) 
+31/10 09:54:09 (enquirelink_resp: (pdu: 16 80000015 0 2) ) 
+31/10 09:54:13 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 532913871) ) 
+31/10 09:54:13 Received unknown data 2: (enquirelink: (pdu: 16 15 0 532913871) ) 
+31/10 09:54:18 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 532932951) ) 
+31/10 09:54:18 Received unknown data 2: (enquirelink: (pdu: 16 15 0 532932951) ) 
+31/10 09:54:24 SMS Tranceiver started
+31/10 09:54:24 Start binding to SMSC server....
+31/10 09:54:24 Binding with bind-mode: tr and sync-mode: a
+31/10 09:54:24 Bind request (bindreq: bsmseone GEN 52 (addrrang: 1 1 22268) ) 
+31/10 09:54:24 Bind response (bindresp: (pdu: 30 80000009 0 1) bsmseone 52) 
+31/10 09:54:24 Start receiver process 0
+31/10 09:54:24 Start transmitter process 0
+31/10 09:54:24 Start receiver process 1
+31/10 09:54:24 Start transmitter process 1
+31/10 09:54:24 Enquire Link request (enquirelink: (pdu: 0 15 0 [2]) ) 
+31/10 09:54:24 (enquirelink_resp: (pdu: 16 80000015 0 2) ) 
+31/10 09:54:28 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 532971195) ) 
+31/10 09:54:28 Received unknown data 2: (enquirelink: (pdu: 16 15 0 532971195) ) 
+31/10 09:54:33 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 532990304) ) 
+31/10 09:54:33 Received unknown data 2: (enquirelink: (pdu: 16 15 0 532990304) ) 
+31/10 09:54:34 Enquire Link request (enquirelink: (pdu: 0 15 0 [3]) ) 
+31/10 09:54:34 (enquirelink_resp: (pdu: 16 80000015 0 3) ) 
+31/10 09:54:50 SMS Tranceiver started
+31/10 09:54:50 Start binding to SMSC server....
+31/10 09:54:50 Binding with bind-mode: tr and sync-mode: a
+31/10 09:54:50 Bind request (bindreq: bsmseone GEN 52 (addrrang: 1 1 22268) ) 
+31/10 09:54:50 Bind response (bindresp: (pdu: 30 80000009 0 1) bsmseone 52) 
+31/10 09:54:50 Start receiver process 0
+31/10 09:54:50 Start transmitter process 0
+31/10 09:54:50 Start receiver process 1
+31/10 09:54:50 Start transmitter process 1
+31/10 09:54:50 Enquire Link request (enquirelink: (pdu: 0 15 0 [2]) ) 
+31/10 09:54:50 (enquirelink_resp: (pdu: 16 80000015 0 2) ) 
+31/10 09:54:54 Received unknown data 2: (enquirelink: (pdu: 16 15 0 533070242) ) 
+31/10 09:54:59 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 533089435) ) 
+31/10 09:54:59 Received unknown data 2: (enquirelink: (pdu: 16 15 0 533089435) ) 
+31/10 09:55:00 Enquire Link request (enquirelink: (pdu: 0 15 0 [3]) ) 
+31/10 09:55:00 (enquirelink_resp: (pdu: 16 80000015 0 3) ) 
+31/10 09:55:04 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 533108674) ) 
+31/10 09:55:04 Received unknown data 2: (enquirelink: (pdu: 16 15 0 533108674) ) 
+31/10 09:55:09 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 533127816) ) 
+31/10 09:55:09 Received unknown data 2: (enquirelink: (pdu: 16 15 0 533127816) ) 
+31/10 09:55:10 Enquire Link request (enquirelink: (pdu: 0 15 0 [4]) ) 
+31/10 09:55:10 (enquirelink_resp: (pdu: 16 80000015 0 4) ) 
+31/10 09:55:14 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 533147014) ) 
+31/10 09:55:14 Received unknown data 2: (enquirelink: (pdu: 16 15 0 533147014) ) 
+31/10 09:55:19 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 533166254) ) 
+31/10 09:55:19 Received unknown data 2: (enquirelink: (pdu: 16 15 0 533166254) ) 
+31/10 09:55:20 Enquire Link request (enquirelink: (pdu: 0 15 0 [5]) ) 
+31/10 09:55:20 (enquirelink_resp: (pdu: 16 80000015 0 5) ) 
+31/10 09:55:24 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 533185428) ) 
+31/10 09:55:24 Received unknown data 2: (enquirelink: (pdu: 16 15 0 533185428) ) 
+31/10 09:55:29 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 533204577) ) 
+31/10 09:55:29 Received unknown data 2: (enquirelink: (pdu: 16 15 0 533204577) ) 
+31/10 09:55:30 Enquire Link request (enquirelink: (pdu: 0 15 0 [6]) ) 
+31/10 09:55:30 (enquirelink_resp: (pdu: 16 80000015 0 6) ) 
+31/10 09:55:34 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 533223537) ) 
+31/10 09:55:34 Received unknown data 2: (enquirelink: (pdu: 16 15 0 533223537) ) 
+31/10 09:55:39 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 533242651) ) 
+31/10 09:55:39 Received unknown data 2: (enquirelink: (pdu: 16 15 0 533242651) ) 
+31/10 09:55:40 Enquire Link request (enquirelink: (pdu: 0 15 0 [7]) ) 
+31/10 09:55:40 (enquirelink_resp: (pdu: 16 80000015 0 7) ) 
+31/10 09:55:44 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 533261711) ) 
+31/10 09:55:44 Received unknown data 2: (enquirelink: (pdu: 16 15 0 533261711) ) 
+31/10 09:55:49 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 533280861) ) 
+31/10 09:55:49 Received unknown data 2: (enquirelink: (pdu: 16 15 0 533280861) ) 
+31/10 09:55:50 Enquire Link request (enquirelink: (pdu: 0 15 0 [8]) ) 
+31/10 09:55:50 (enquirelink_resp: (pdu: 16 80000015 0 8) ) 
+31/10 09:55:54 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 533299913) ) 
+31/10 09:55:54 Received unknown data 2: (enquirelink: (pdu: 16 15 0 533299913) ) 
+31/10 09:55:59 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 533319041) ) 
+31/10 09:55:59 Received unknown data 2: (enquirelink: (pdu: 16 15 0 533319041) ) 
+31/10 09:56:00 Enquire Link request (enquirelink: (pdu: 0 15 0 [9]) ) 
+31/10 09:56:00 (enquirelink_resp: (pdu: 16 80000015 0 9) ) 
+31/10 10:02:47 SMS Tranceiver started
+31/10 10:02:47 Start binding to SMSC server....
+31/10 10:02:47 Binding with bind-mode: tr and sync-mode: a
+31/10 10:02:47 Bind request (bindreq: bsmseone GEN 52 (addrrang: 1 1 22268) ) 
+31/10 10:02:47 Bind response (bindresp: (pdu: 30 80000009 0 1) bsmseone 52) 
+31/10 10:02:47 Start receiver process 0
+31/10 10:02:47 Start transmitter process 0
+31/10 10:02:47 Start receiver process 1
+31/10 10:02:47 Start transmitter process 1
+31/10 10:02:47 Enquire Link request (enquirelink: (pdu: 0 15 0 [2]) ) 
+31/10 10:02:47 (enquirelink_resp: (pdu: 16 80000015 0 2) ) 
+31/10 10:02:52 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 534890382) ) 
+31/10 10:02:52 Received unknown data 2: (enquirelink: (pdu: 16 15 0 534890382) ) 
+31/10 10:03:18 SMS Tranceiver started
+31/10 10:03:18 Start binding to SMSC server....
+31/10 10:03:18 Binding with bind-mode: tr and sync-mode: a
+31/10 10:03:18 Bind request (bindreq: bsmseone GEN 52 (addrrang: 1 1 22268) ) 
+31/10 10:03:18 Bind response (bindresp: (pdu: 30 80000009 0 1) bsmseone 52) 
+31/10 10:03:18 Start receiver process 0
+31/10 10:03:18 Start transmitter process 0
+31/10 10:03:18 Start receiver process 1
+31/10 10:03:18 Start transmitter process 1
+31/10 10:03:18 Enquire Link request (enquirelink: (pdu: 0 15 0 [2]) ) 
+31/10 10:03:18 (enquirelink_resp: (pdu: 16 80000015 0 2) ) 
+31/10 10:03:22 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535005037) ) 
+31/10 10:03:22 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535005037) ) 
+31/10 10:03:27 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535024209) ) 
+31/10 10:03:27 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535024209) ) 
+31/10 10:03:28 Enquire Link request (enquirelink: (pdu: 0 15 0 [3]) ) 
+31/10 10:03:28 (enquirelink_resp: (pdu: 16 80000015 0 3) ) 
+31/10 10:03:32 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535043431) ) 
+31/10 10:03:32 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535043431) ) 
+31/10 10:03:37 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535062645) ) 
+31/10 10:03:37 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535062645) ) 
+31/10 10:03:38 Enquire Link request (enquirelink: (pdu: 0 15 0 [4]) ) 
+31/10 10:03:38 (enquirelink_resp: (pdu: 16 80000015 0 4) ) 
+31/10 10:03:42 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535081876) ) 
+31/10 10:03:42 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535081876) ) 
+31/10 10:03:47 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535101049) ) 
+31/10 10:03:47 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535101049) ) 
+31/10 10:03:48 Enquire Link request (enquirelink: (pdu: 0 15 0 [5]) ) 
+31/10 10:03:48 (enquirelink_resp: (pdu: 16 80000015 0 5) ) 
+31/10 10:03:52 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535120270) ) 
+31/10 10:03:52 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535120270) ) 
+31/10 10:03:57 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535139415) ) 
+31/10 10:03:57 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535139415) ) 
+31/10 10:03:58 Enquire Link request (enquirelink: (pdu: 0 15 0 [6]) ) 
+31/10 10:03:58 (enquirelink_resp: (pdu: 16 80000015 0 6) ) 
+31/10 10:04:02 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535158634) ) 
+31/10 10:04:02 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535158634) ) 
+31/10 10:04:07 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535177837) ) 
+31/10 10:04:07 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535177837) ) 
+31/10 10:04:08 Enquire Link request (enquirelink: (pdu: 0 15 0 [7]) ) 
+31/10 10:04:08 (enquirelink_resp: (pdu: 16 80000015 0 7) ) 
+31/10 10:04:12 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535197095) ) 
+31/10 10:04:12 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535197095) ) 
+31/10 10:04:17 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535216286) ) 
+31/10 10:04:17 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535216286) ) 
+31/10 10:04:18 Enquire Link request (enquirelink: (pdu: 0 15 0 [8]) ) 
+31/10 10:04:18 (enquirelink_resp: (pdu: 16 80000015 0 8) ) 
+31/10 10:04:22 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535235469) ) 
+31/10 10:04:22 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535235469) ) 
+31/10 10:04:27 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535254654) ) 
+31/10 10:04:27 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535254654) ) 
+31/10 10:04:28 Enquire Link request (enquirelink: (pdu: 0 15 0 [9]) ) 
+31/10 10:04:28 (enquirelink_resp: (pdu: 16 80000015 0 9) ) 
+31/10 10:04:32 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535273850) ) 
+31/10 10:04:32 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535273850) ) 
+31/10 10:04:37 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535293030) ) 
+31/10 10:04:37 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535293030) ) 
+31/10 10:04:38 Enquire Link request (enquirelink: (pdu: 0 15 0 [10]) ) 
+31/10 10:04:38 (enquirelink_resp: (pdu: 16 80000015 0 10) ) 
+31/10 10:04:42 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535312247) ) 
+31/10 10:04:42 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535312247) ) 
+31/10 10:04:47 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 535331483) ) 
+31/10 10:04:47 Received unknown data 2: (enquirelink: (pdu: 16 15 0 535331483) ) 
+31/10 10:04:48 Enquire Link request (enquirelink: (pdu: 0 15 0 [11]) ) 
+31/10 10:04:48 (enquirelink_resp: (pdu: 16 80000015 0 11) ) 
+31/10 10:46:04 SMS Tranceiver started
+31/10 10:46:04 Start binding to SMSC server....
+31/10 10:46:04 Binding with bind-mode: tr and sync-mode: a
+31/10 10:46:04 Bind request (bindreq: bsmseone GEN 52 (addrrang: 1 1 22268) ) 
+31/10 10:46:05 Bind response (bindresp: (pdu: 30 80000009 0 1) bsmseone 52) 
+31/10 10:46:05 Start receiver process 0
+31/10 10:46:05 Start transmitter process 0
+31/10 10:46:05 Start receiver process 1
+31/10 10:46:05 Start transmitter process 1
+31/10 10:46:05 Enquire Link request (enquirelink: (pdu: 0 15 0 [2]) ) 
+31/10 10:46:05 (enquirelink_resp: (pdu: 16 80000015 0 2) ) 
+31/10 10:46:09 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 508795458) ) 
+31/10 10:46:09 Received unknown data 2: (enquirelink: (pdu: 16 15 0 508795458) ) 
+31/10 10:46:14 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 508814672) ) 
+31/10 10:46:14 Received unknown data 2: (enquirelink: (pdu: 16 15 0 508814672) ) 
+31/10 10:46:15 Enquire Link request (enquirelink: (pdu: 0 15 0 [3]) ) 
+31/10 10:46:15 (enquirelink_resp: (pdu: 16 80000015 0 3) ) 
+31/10 10:46:19 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 508833851) ) 
+31/10 10:46:19 Received unknown data 2: (enquirelink: (pdu: 16 15 0 508833851) ) 
+31/10 10:46:24 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 508853097) ) 
+31/10 10:46:24 Received unknown data 2: (enquirelink: (pdu: 16 15 0 508853097) ) 
+31/10 10:46:25 Enquire Link request (enquirelink: (pdu: 0 15 0 [4]) ) 
+31/10 10:46:25 (enquirelink_resp: (pdu: 16 80000015 0 4) ) 
+31/10 10:47:51 SMS Tranceiver started
+31/10 10:47:51 Start binding to SMSC server....
+31/10 10:47:51 Binding with bind-mode: tr and sync-mode: a
+31/10 10:47:51 Bind request (bindreq: bsmseone GEN 52 (addrrang: 1 1 22268) ) 
+31/10 10:47:51 Bind response (bindresp: (pdu: 30 80000009 0 1) bsmseone 52) 
+31/10 10:47:51 Start receiver process 0
+31/10 10:47:51 Start transmitter process 0
+31/10 10:47:52 Start receiver process 1
+31/10 10:47:52 Start transmitter process 1
+31/10 10:47:52 Enquire Link request (enquirelink: (pdu: 0 15 0 [2]) ) 
+31/10 10:47:52 (enquirelink_resp: (pdu: 16 80000015 0 2) ) 
+31/10 10:47:56 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 509204076) ) 
+31/10 10:47:56 Received unknown data 2: (enquirelink: (pdu: 16 15 0 509204076) ) 
+31/10 10:48:01 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 509223247) ) 
+31/10 10:48:01 Received unknown data 2: (enquirelink: (pdu: 16 15 0 509223247) ) 
+31/10 10:48:02 Enquire Link request (enquirelink: (pdu: 0 15 0 [3]) ) 
+31/10 10:48:02 (enquirelink_resp: (pdu: 16 80000015 0 3) ) 
+31/10 10:48:20 SMS Tranceiver started
+31/10 10:48:20 Start binding to SMSC server....
+31/10 10:48:20 Binding with bind-mode: tr and sync-mode: a
+31/10 10:48:20 Bind request (bindreq: bsmseone GEN 52 (addrrang: 1 1 22268) ) 
+31/10 10:48:21 Bind response (bindresp: (pdu: 30 80000009 0 1) bsmseone 52) 
+31/10 10:48:21 Start receiver process 0
+31/10 10:48:21 Start transmitter process 0
+31/10 10:48:21 Start receiver process 1
+31/10 10:48:21 Start transmitter process 1
+31/10 10:48:21 Enquire Link request (enquirelink: (pdu: 0 15 0 [2]) ) 
+31/10 10:48:21 (enquirelink_resp: (pdu: 16 80000015 0 2) ) 
+31/10 10:48:25 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 509315122) ) 
+31/10 10:48:25 Received unknown data 2: (enquirelink: (pdu: 16 15 0 509315122) ) 
+31/10 10:48:30 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 509334325) ) 
+31/10 10:48:30 Received unknown data 2: (enquirelink: (pdu: 16 15 0 509334325) ) 
+31/10 10:48:31 Enquire Link request (enquirelink: (pdu: 0 15 0 [3]) ) 
+31/10 10:48:31 (enquirelink_resp: (pdu: 16 80000015 0 3) ) 
+31/10 10:48:35 ACK to SMSC: (enquirelink_resp: (pdu: 0 80000015 0 509353559) ) 
+31/10 10:48:35 Received unknown data 2: (enquirelink: (pdu: 16 15 0 509353559) ) 

@@ -1,0 +1,10 @@
+29/08 09:04:02 Send SMS from db started
+29/08 09:04:03 Error occured: ORA-01017: invalid username/password; logon denied
+
+29/08 09:04:48 Send SMS from db started
+29/08 09:04:48 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+29/08 09:04:48 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+29/08 09:04:48 Number of SMS: 0
+29/08 09:05:18 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+29/08 09:05:18 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+29/08 09:05:18 Number of SMS: 0

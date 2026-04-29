@@ -1,0 +1,13 @@
+29/06 09:32:45 SMS Tranceiver TSCS started
+29/06 09:32:45 Start binding to SMSC server....
+29/06 09:32:45 Binding with bind-mode: tr and sync-mode: a
+29/06 09:32:45 Bind request (bindreq: htkttt GEN 52 (addrrang: 1 1 htkttt) ) 
+29/06 09:32:45 No response from smsc,please check the parammeters.
+29/06 09:32:46 Going to unbind
+29/06 09:32:46 Not bound, cannot unbind.
+29/06 09:33:16 Start binding to SMSC server....
+29/06 09:33:16 Binding with bind-mode: tr and sync-mode: a
+29/06 09:33:16 Bind request (bindreq: htkttt GEN 52 (addrrang: 1 1 htkttt) ) 
+29/06 09:33:16 No response from smsc,please check the parammeters.
+29/06 09:33:17 Going to unbind
+29/06 09:33:17 Not bound, cannot unbind.

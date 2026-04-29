@@ -1,0 +1,123 @@
+27/07 08:43:13 Process Refund Eload started
+27/07 08:51:47 Process Refund Eload started
+27/07 08:54:35 Process Refund Eload started
+27/07 08:56:23 Process Refund Eload started
+27/07 08:56:59 Process Refund Eload started
+27/07 09:00:45 Process Refund Eload started
+27/07 09:01:16 Process Refund Eload started
+27/07 09:01:22 Start performing immediate execution
+27/07 09:01:31 Start performing immediate execution
+27/07 09:02:54 Process Refund Eload started
+27/07 09:04:01 Process Refund Eload started
+27/07 09:04:10 Start performing immediate execution
+27/07 09:05:16 Process Refund Eload started
+27/07 09:06:23 Process Refund Eload started
+27/07 09:07:00 Start performing immediate execution
+27/07 09:07:59 Process Refund Eload started
+27/07 09:09:08 Process Refund Eload started
+27/07 09:11:24 Process Refund Eload started
+27/07 09:12:14 Process Refund Eload started
+27/07 09:23:48 Process Refund Eload started
+27/07 09:23:55 Start performing immediate execution
+27/07 09:26:31 Process Refund Eload started
+27/07 09:28:18 Process Refund Eload started
+27/07 09:29:36 Process Refund Eload started
+27/07 09:30:15 Process Refund Eload started
+27/07 09:37:05 Process Refund Eload started
+27/07 09:49:22 Process Refund Eload started
+27/07 09:49:29 log in status:0
+27/07 09:50:55 Error occured: java.lang.Integer cannot be cast to java.lang.String
+27/07 09:54:58 Process Refund Eload started
+27/07 09:54:59 log in status:0
+27/07 09:55:00 Error occured: Invalid column name
+27/07 09:55:13 log in status:0
+27/07 09:55:13 Error occured: Invalid column name
+27/07 09:55:15 log in status:0
+27/07 09:55:15 Error occured: Invalid column name
+27/07 09:55:17 log in status:0
+27/07 09:55:17 Error occured: Invalid column name
+27/07 09:55:19 log in status:0
+27/07 09:55:19 Error occured: Invalid column name
+27/07 09:55:21 log in status:0
+27/07 09:55:22 Error occured: Invalid column name
+27/07 09:55:24 log in status:0
+27/07 09:55:24 Error occured: Invalid column name
+27/07 09:55:26 log in status:0
+27/07 09:55:26 Error occured: Invalid column name
+27/07 09:55:28 log in status:0
+27/07 09:55:28 Error occured: Invalid column name
+27/07 09:55:30 log in status:0
+27/07 09:55:30 Error occured: Invalid column name
+27/07 09:55:32 log in status:0
+27/07 15:52:36 Process Refund Eload started
+27/07 15:52:37 log in status:0
+27/07 15:52:37 Login success. Session id: C2F8408C640BBFDA38FE3145F449FB4C321CD91FDC9E1A25
+27/07 15:53:21 Process complete. New counter: 1
+27/07 15:53:23 log in status:0
+27/07 15:53:23 Login success. Session id: A4B698FEB5C792ADB58658EC54A4AB380EE9F2580B91EF52
+27/07 15:54:10 Process Refund Eload started
+27/07 15:54:11 log in status:0
+27/07 15:54:11 Login success. Session id: E989E008F12A459B07EF6210290EA1467C23E94938041394
+27/07 15:55:05 Process complete. New counter: 20
+27/07 15:55:25 Thread destroyed
+27/07 15:55:44 Start performing immediate execution
+27/07 15:55:44 log in status:0
+27/07 15:55:44 Login success. Session id: 9E68D90B1F3DEF857361E69DF7CDD68551B01A8AF1B9CEB5
+27/07 15:56:15 Process complete. New counter: 26
+27/07 15:56:23 Immediate execution completed
+27/07 15:57:28 Process Refund Eload started
+27/07 15:57:29 log in status:0
+27/07 15:57:29 Login success. Session id: C419574CCD1C8C73B06B2A3D25986294BF6E01D5E5C8DA83
+27/07 15:57:29 Process complete. New counter: 26
+27/07 15:58:29 log in status:0
+27/07 15:58:29 Login success. Session id: FE01AD5297CD684AC1515DCDF4808A9D80C21970521CD3F1
+27/07 15:58:29 Process complete. New counter: 26
+27/07 15:59:29 log in status:0
+27/07 15:59:29 Login success. Session id: 647AAD3D6BE39DE9F4D9A2622304467FC4E0DC86DA98193B
+27/07 15:59:29 Process complete. New counter: 26
+27/07 16:00:03 Thread destroyed
+27/07 16:00:35 Start performing immediate execution
+27/07 16:00:35 log in status:0
+27/07 16:00:35 Login success. Session id: B37C891C37EF671C67310108FB9BB93B868FB37F8C29756B
+27/07 16:00:35 Test Mode: msisdn 841253321330 not allowed to send sms
+27/07 16:00:35 [SEND_SMS]841253321330 with content: Quy khach vua duoc tra 27000 hoa hong ban dich vu qua cong ServiceSale
+27/07 16:00:35 Process complete. New counter: 30
+27/07 16:00:35 Immediate execution completed
+27/07 16:07:18 Start performing immediate execution
+27/07 16:07:18 log in status:0
+27/07 16:07:18 Login success. Session id: 1961409798D0291F9729082A76DABAB37A7A9B587931D9C7
+27/07 16:07:18 Process complete. New counter: 30
+27/07 16:07:18 Immediate execution completed
+27/07 16:08:37 Process Refund Eload started
+27/07 16:08:38 log in status:0
+27/07 16:08:38 Login success. Session id: 205D92D55B8AF1DC4A6EE6D3AB1A7F23F88A621F109B2052
+27/07 16:08:49 Process complete. New counter: 30
+27/07 16:09:08 Thread destroyed
+27/07 16:09:33 Start performing immediate execution
+27/07 16:09:33 log in status:0
+27/07 16:09:33 Login success. Session id: B345E6769D3B15DFEC8FF8EC13F47AA40B91CD94299EFBE3
+27/07 16:10:07 Process complete. New counter: 32
+27/07 16:10:07 Immediate execution completed
+27/07 16:11:12 Process Refund Eload started
+27/07 16:11:12 log in status:0
+27/07 16:11:12 Login success. Session id: 611AB070BC7F6DDCF18C10B56E76F85D38A8A4C2F1025D70
+27/07 16:11:13 Process complete. New counter: 32
+27/07 16:11:32 Thread destroyed
+27/07 16:11:52 Start performing immediate execution
+27/07 16:11:52 log in status:0
+27/07 16:11:52 Login success. Session id: EF7C3E54A7A249E93D19FE451661ECB0ECF20B3E75C45791
+27/07 16:11:52 process row id: AAA4gYAAMAAAQhcAAA |counter: 32
+27/07 16:12:26 process row id: AAA4gYAAMAAAQhcAAB |counter: 33
+27/07 16:13:07 Process complete. New counter: 34
+27/07 16:13:07 Immediate execution completed
+27/07 16:13:22 Start performing immediate execution
+27/07 16:13:22 log in status:0
+27/07 16:13:22 Login success. Session id: E0C7851C4CD6544FDFCBC2FD07A4BCF7707CB0D90BF42AAD
+27/07 16:13:26 Process complete. New counter: 34
+27/07 16:13:26 Immediate execution completed
+27/07 16:13:43 Start performing immediate execution
+27/07 16:13:44 log in status:0
+27/07 16:13:44 Login success. Session id: 2562E96237AE16FB52DF0258EA670DF47AD6B0CD409E3D34
+27/07 16:13:44 process row id: AAA4gYAAMAAAQhcAAA |counter: 34
+27/07 16:13:49 Process complete. New counter: 35
+27/07 16:13:50 Immediate execution completed

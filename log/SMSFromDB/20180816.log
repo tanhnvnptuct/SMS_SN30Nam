@@ -1,0 +1,49 @@
+16/08 08:48:28 Send SMS from db started
+16/08 08:48:29 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (0) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:48:29 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:48:59 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (0) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:48:59 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:49:29 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (0) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:49:29 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:49:54 Thread destroyed
+16/08 08:49:57 Send SMS from db started
+16/08 08:49:57 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (019,) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:49:57 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:50:27 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (019,19,) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:50:27 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:50:57 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (019,19,19,) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:50:57 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:51:56 Send SMS from db started
+16/08 08:51:56 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (19,) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:51:56 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:52:15 Send SMS from db started
+16/08 08:52:15 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (19) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:52:15 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:52:46 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (19) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:52:46 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:53:16 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (19) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:53:16 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:53:46 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (19) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:53:46 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:53:51 Thread destroyed
+16/08 08:53:53 Send SMS from db started
+16/08 08:53:53 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (19) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:53:53 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:54:23 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (0) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:54:23 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:54:53 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (310) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:54:53 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:55:23 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (310) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:55:23 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:55:54 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (310) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:55:54 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:56:24 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (310) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:56:24 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:57:05 Send SMS from db started
+16/08 08:57:06 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (310) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 08:57:06 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 08:57:13 Thread destroyed
+16/08 09:13:14 Send SMS from db started
+16/08 09:13:14 mstrSqlGet select * from sms_mt_1558 partition(Part_20180816) where status in (0, 2) and campaign_id in (19,310) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+16/08 09:13:14 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+16/08 09:13:23 Thread destroyed

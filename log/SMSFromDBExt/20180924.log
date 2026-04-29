@@ -1,0 +1,243 @@
+24/09 13:44:06 Send SMS from db started
+24/09 13:44:06 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:44:06 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:48:24 error when send sms for 84941233764 with content ?ây CTKM NAP THE VINA- MAZDA TAN NHA thong bao: QK hien co xx MDT de tham du CT quay thuong ngay DD/MM/YY. Tong giai thuong 2 O TO MAZDA6 va 45 XE MAY Honda SH125i. CT quay thuong ngay DD/MM/YY. Chi tiet: http://khuyenmai.vinaphone.com.vn
+24/09 13:48:24 Number of SMS: 1
+24/09 13:48:54 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:48:54 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:48:54 Number of SMS: 0
+24/09 13:49:24 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:49:25 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:49:25 Number of SMS: 0
+24/09 13:49:55 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:49:55 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:49:55 Number of SMS: 0
+24/09 13:50:25 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:50:25 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:50:25 Number of SMS: 0
+24/09 13:50:55 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:50:55 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:51:51 error when send sms for 84941233764 with content ?ây CTKM NAP THE VINA- MAZDA TAN NHA thong bao: QK hien co xx MDT de tham du CT quay thuong ngay DD/MM/YY. Tong giai thuong 2 O TO MAZDA6 va 45 XE MAY Honda SH125i. CT quay thuong ngay DD/MM/YY. Chi tiet: http://khuyenmai.vinaphone.com.vn
+24/09 13:51:51 Number of SMS: 1
+24/09 13:52:21 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:52:21 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:54:04 Send SMS from db started
+24/09 13:54:04 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:54:04 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:54:47 Send SMS from db started
+24/09 13:54:47 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:54:47 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:54:53 Number of SMS: 1
+24/09 13:55:26 Send SMS from db started
+24/09 13:55:26 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:55:26 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:55:26 Number of SMS: 0
+24/09 13:55:40 Send SMS from db started
+24/09 13:55:40 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:55:40 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:55:46 Number of SMS: 1
+24/09 13:56:16 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:56:16 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:56:16 Number of SMS: 0
+24/09 13:56:46 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:56:46 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:56:46 Number of SMS: 0
+24/09 13:57:05 Send SMS from db started
+24/09 13:57:05 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:57:05 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:57:05 Number of SMS: 1
+24/09 13:57:36 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:57:36 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:57:36 Number of SMS: 0
+24/09 13:58:06 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:58:06 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:58:20 Send SMS from db started
+24/09 13:58:20 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:58:20 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:58:50 Send SMS from db started
+24/09 13:58:50 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:58:50 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:58:50 Number of SMS: 1
+24/09 13:59:19 Send SMS from db started
+24/09 13:59:20 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:59:20 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:59:20 Number of SMS: 1
+24/09 13:59:50 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 13:59:50 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 13:59:50 Number of SMS: 0
+24/09 14:00:20 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:00:20 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:00:20 Number of SMS: 0
+24/09 14:00:44 Send SMS from db started
+24/09 14:00:44 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:00:44 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:00:44 Number of SMS: 1
+24/09 14:01:14 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:01:14 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:01:14 Number of SMS: 0
+24/09 14:01:44 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:01:44 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:04:56 Send SMS from db started
+24/09 14:04:57 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:04:57 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:14:41 Send SMS from db started
+24/09 14:14:41 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:14:41 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:14:41 Number of SMS: 1
+24/09 14:15:11 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:15:11 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:15:11 Number of SMS: 0
+24/09 14:15:44 Send SMS from db started
+24/09 14:15:44 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:15:44 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:16:55 Send SMS from db started
+24/09 14:16:56 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:16:56 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:17:38 Send SMS from db started
+24/09 14:17:38 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:17:38 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:17:38 Number of SMS: 1
+24/09 14:18:08 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:18:08 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:18:08 Number of SMS: 0
+24/09 14:18:38 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:18:38 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:18:38 Number of SMS: 0
+24/09 14:19:08 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:19:08 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:19:08 Number of SMS: 0
+24/09 14:19:38 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:19:38 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:19:38 Number of SMS: 0
+24/09 14:20:08 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:20:08 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:20:08 Number of SMS: 0
+24/09 14:20:38 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:20:38 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:20:38 Number of SMS: 0
+24/09 14:21:08 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:21:08 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:21:08 Number of SMS: 0
+24/09 14:21:38 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:21:38 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:21:38 Number of SMS: 0
+24/09 14:22:08 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:22:08 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:22:08 Number of SMS: 0
+24/09 14:22:38 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:22:38 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:22:38 Number of SMS: 0
+24/09 14:23:08 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:23:08 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:23:08 Number of SMS: 0
+24/09 14:23:38 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:23:38 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:23:38 Number of SMS: 0
+24/09 14:24:08 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:24:08 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:24:08 Number of SMS: 0
+24/09 14:24:38 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:24:38 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:24:38 Number of SMS: 0
+24/09 14:25:08 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:25:08 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:25:08 Number of SMS: 0
+24/09 14:25:38 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:25:38 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:25:38 Number of SMS: 0
+24/09 14:26:08 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:26:08 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:26:08 Number of SMS: 0
+24/09 14:26:38 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:26:38 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:26:38 Number of SMS: 0
+24/09 14:27:08 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:27:08 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:27:08 Number of SMS: 0
+24/09 14:27:38 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:27:38 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:27:38 Number of SMS: 0
+24/09 14:28:08 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:28:08 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:28:08 Number of SMS: 0
+24/09 14:28:38 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:28:38 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:28:39 Number of SMS: 0
+24/09 14:29:09 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:29:09 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:29:09 Number of SMS: 0
+24/09 14:29:39 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:29:39 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:29:39 Number of SMS: 0
+24/09 14:30:09 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:30:09 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:30:09 Number of SMS: 0
+24/09 14:30:39 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:30:39 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:30:39 Number of SMS: 0
+24/09 14:31:09 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:31:09 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:31:09 Number of SMS: 0
+24/09 14:31:39 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:31:39 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:31:39 Number of SMS: 0
+24/09 14:32:09 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:32:09 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:32:09 Number of SMS: 0
+24/09 14:32:39 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:32:39 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:32:39 Number of SMS: 0
+24/09 14:33:09 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:33:09 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:33:09 Number of SMS: 0
+24/09 14:33:39 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:33:39 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:33:39 Number of SMS: 0
+24/09 14:34:09 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:34:09 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:34:09 Number of SMS: 0
+24/09 14:34:39 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:34:39 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:34:39 Number of SMS: 0
+24/09 14:35:09 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:35:09 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:35:09 Number of SMS: 0
+24/09 14:35:39 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:35:39 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:35:39 Number of SMS: 0
+24/09 14:36:09 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:36:09 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:36:09 Number of SMS: 0
+24/09 14:36:39 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:36:39 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:36:39 Number of SMS: 0
+24/09 14:37:09 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:37:09 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:37:09 Number of SMS: 0
+24/09 14:37:39 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:37:39 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:37:39 Number of SMS: 0
+24/09 14:38:09 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:38:09 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:38:09 Number of SMS: 1
+24/09 14:38:39 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:38:39 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:38:39 Number of SMS: 0
+24/09 14:39:09 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:39:09 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:39:09 Number of SMS: 0
+24/09 14:39:39 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:39:39 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:39:39 Number of SMS: 0
+24/09 14:40:09 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:40:09 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:40:09 Number of SMS: 0
+24/09 14:40:39 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:40:39 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:42:57 Send SMS from db started
+24/09 14:42:57 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:42:57 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:42:57 Number of SMS: 2
+24/09 14:43:27 mstrSqlGet select * from brandname_sms_mt where submit_time >= trunc(sysdate) and status in (0,2) and rownum < 2000 order by submit_time
+24/09 14:43:27 psUpdateQueue update brandname_sms_mt set status =1, sent_time = sysdate where id = ?
+24/09 14:43:27 Number of SMS: 0

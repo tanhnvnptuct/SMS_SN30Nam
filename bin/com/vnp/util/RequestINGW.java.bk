@@ -1,0 +1,1076 @@
+package com.vnp.util;
+
+import java.io.*;
+import java.net.*;
+
+import com.fss.util.*;
+import com.vnp.util.message.*;
+
+/**
+ * <p>Title: </p>
+ *
+ * <p>Description: </p>
+ *
+ * <p>Copyright: Copyright (c) 2005</p>
+ *
+ * <p>Company: </p>
+ *
+ * @author not attributable
+ * @version 1.0
+ */
+public class RequestINGW
+{
+	int miTransID = 1;
+	private String mstrSessionID;
+	private String host;
+	private int port;
+	private String username;
+	private String password;
+	private int mintKeepAliveInterval = 30000; //seconds
+	private Socket socket;
+	InputStream is;
+	public static final String TERMINATED_SYMBOL = "</uinml>";
+	public static final String KEEPALIVE_COMMAND = "keepalive";
+	public static final String CONNECT_COMMAND = "connect";
+	public static final String EXIT_COMMAND = "exit";
+	private long mlngNextSendKeepAlive = 0;
+	public static final String QUERY = "query_account_ex";
+	public static final String ADD_BALANCE = "modify_list_balance";
+	public static final String ADD_BALANCE_2 = "modify_list_balance_2";
+	public static final String SET_ALCS = "set_alcs";
+	public static final String OFF_ALCS = "remove_alcs";
+	public static final String ACC_COMMAND = "set_acc";
+	public String mstrMessage;
+
+	public boolean setAcc(String strIsdn,String accName) throws Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		String strTransID = String.valueOf(miTransID);
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.header.command",ACC_COMMAND);
+		msgRequest.setValue("uinml.data.transid",strTransID);
+		msgRequest.setValue("uinml.data.msisdn",strIsdn);
+		msgRequest.setValue("uinml.data.accname",accName);
+		msgRequest.setValue("uinml.data.accvalue","0");
+
+		OutputStream out = socket.getOutputStream();
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+	}
+
+	public boolean regAlcs(String strISDN,String strAlcs,String startDate,String endDate) throws IOException,Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",SET_ALCS);
+		msgRequest.setValue("uinml.data.msisdn",strISDN);
+		msgRequest.setValue("uinml.data.name",strAlcs);
+		msgRequest.setValue("uinml.data.start_date",startDate);
+		msgRequest.setValue("uinml.data.end_date",endDate);
+
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+	}
+
+	//huy dich vu alc
+	public boolean deleteAlcs(String strISDN,String strAlcsName) throws IOException,Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",OFF_ALCS);
+		msgRequest.setValue("uinml.data.msisdn",strISDN);
+		msgRequest.setValue("uinml.data.name",strAlcsName);
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+
+		if(strStatus.equals("0")){
+			return true;
+		}
+		return false;
+	}
+
+//tru tien
+	public boolean minusMoney(String strISDN,String strMoney,String strComment) throws IOException,Exception
+	{
+		boolean bl = true;
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",ADD_BALANCE);
+		msgRequest.setValue("uinml.data.msisdn",strISDN);
+		msgRequest.setValue("uinml.data.list_account","tkc");
+		msgRequest.setValue("uinml.data.list_amount",strMoney);
+
+		msgRequest.setValue("uinml.data.comment",strComment);
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+	}
+
+	public boolean minusMoney(String strISDN,String strMoney,String strDay,String strComment) throws IOException,Exception
+	{
+		boolean bl = true;
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",ADD_BALANCE);
+		msgRequest.setValue("uinml.data.msisdn",strISDN);
+
+		msgRequest.setValue("uinml.data.list_account","tkc:km:km1:km2:data:gprs_student_teenager");
+		msgRequest.setValue("uinml.data.list_amount",strMoney);
+		msgRequest.setValue("uinml.data.list_days",strDay);
+		msgRequest.setValue("uinml.data.comment",strComment);
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+	public boolean minusMoney2(String strISDN,String listAccount,String listMoney,String listDate,String strComment) throws IOException,Exception
+	{
+		boolean bl = true;
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid",String.valueOf(miTransID));
+		msgRequest.setValue("uinml.header.command",ADD_BALANCE_2);
+		msgRequest.setValue("uinml.data.msisdn",strISDN);
+		msgRequest.setValue("uinml.data.list_account",listAccount);
+		msgRequest.setValue("uinml.data.list_amount",listMoney);
+		msgRequest.setValue("uinml.data.list_date",listDate);
+
+		msgRequest.setValue("uinml.data.comment",strComment);
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+	}
+	/**
+	 * see AP_PARAM table to retreive predefined command
+	 * @param strISDN String
+	 * @param strCommand String
+	 * @param listAccount String
+	 * @param listMoney String
+	 * @param listDate String
+	 * @param strComment String
+	 * @return boolean
+	 * @throws IOException
+	 * @throws Exception
+	 */
+	public boolean minusMoney2(String strISDN, String strCommand, String listAccount,String listMoney, String listDate,String strComment) throws IOException,Exception
+	{
+		boolean bl = true;
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid", String.valueOf(miTransID));
+		msgRequest.setValue("uinml.header.command",strCommand);
+		msgRequest.setValue("uinml.data.msisdn",strISDN);
+		msgRequest.setValue("uinml.data.list_account",listAccount);
+		msgRequest.setValue("uinml.data.list_amount",listMoney);
+		if(listDate != null || !listDate.equals(""))
+			msgRequest.setValue("uinml.data.list_date",listDate);
+		msgRequest.setValue("uinml.data.comment",strComment);
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+	}
+
+	public String DEL_GROUP_ACC = "delete_group_account";
+	public boolean deleteGroupAccount(String strISDN,String groupName) throws IOException,Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",DEL_GROUP_ACC);
+		msgRequest.setValue("uinml.data.msisdn",strISDN);
+		msgRequest.setValue("uinml.data.group_name",groupName);
+
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+	}
+
+	public String DEL_PHONEBOOK = "delete_phonebook";
+	public boolean deletePhonebook(String strISDN,String position) throws IOException,Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",DEL_PHONEBOOK);
+		msgRequest.setValue("uinml.data.msisdn",strISDN);
+		msgRequest.setValue("uinml.data.position",position);
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+
+		if(strStatus.equals("0")){
+			return true;
+		}
+		return false;
+	}
+
+	public String REMOVE_MEMBER_FROM_GROUP = "remove_member_from_group";
+	public boolean removeMemberFromGroup(String strISDN) throws IOException,Exception
+	{
+		boolean bl = true;
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",REMOVE_MEMBER_FROM_GROUP);
+		msgRequest.setValue("uinml.data.msisdn",strISDN);
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+	}
+
+	public String MODIFY_SPEND_LIMIT = "modify_spend_limit";
+	public boolean modifySpendingLimit(String strIsdn,String totalBalance,String totalSpendLimit,String nextSpendLimit,String expDate) throws
+		IOException,Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",MODIFY_SPEND_LIMIT);
+		msgRequest.setValue("uinml.data.msisdn",strIsdn);
+		msgRequest.setValue("uinml.data.total_balance",totalBalance);
+		msgRequest.setValue("uinml.data.total_spend_balance",totalSpendLimit);
+		msgRequest.setValue("uinml.data.next_spend_balance",nextSpendLimit);
+		msgRequest.setValue("uinml.data.exp_date",expDate);
+
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+
+	}
+
+	public String MODIFY_LIMIT_GROUP_ACCOUNT = "modify_spend_limit_group_acc";
+	public boolean modifyLimitGroupAcc(String groupName,String money,String mstrIsdn) throws IOException,Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",MODIFY_LIMIT_GROUP_ACCOUNT);
+		msgRequest.setValue("uinml.data.msisdn",mstrIsdn);
+		msgRequest.setValue("uinml.data.group_name",groupName);
+		msgRequest.setValue("uinml.data.money",money);
+
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+	}
+
+	public static final String ADD_MEMBER_TO_GROUP = "add_member_to_group";
+	public boolean addMemberToGroup(String groupName,String strISDN) throws IOException,Exception
+	{
+		boolean bl = true;
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",ADD_MEMBER_TO_GROUP);
+		msgRequest.setValue("uinml.data.msisdn",strISDN);
+		msgRequest.setValue("uinml.data.group_name",groupName);
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+	}
+
+	public boolean isSendKeepAliveCommand()
+	{
+		return(mlngNextSendKeepAlive < System.currentTimeMillis());
+	}
+
+	public void sendKeepAlive() throws Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.header.command",KEEPALIVE_COMMAND);
+		msgRequest.store(socket.getOutputStream());
+		socket.getOutputStream().flush();
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+	}
+
+	public XMLMessage query(String strISDN) throws IOException,Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",QUERY);
+		msgRequest.setValue("uinml.data.msisdn",strISDN);
+
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+		try{
+			XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+			return msgResponse;
+		}
+		catch(Exception ex){
+			ex.printStackTrace();
+			throw ex;
+		}
+	}
+
+	public String ADD_LOCATION = "create_location";
+	public boolean addLocation(String strIsdn,String strLocation) throws Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		String strTransID = String.valueOf(miTransID);
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.header.command",ADD_LOCATION);
+		msgRequest.setValue("uinml.data.transid",strTransID);
+		msgRequest.setValue("uinml.data.msisdn",strIsdn);
+		msgRequest.setValue("uinml.data.location",strLocation);
+		msgRequest.setValue("uinml.data.position","1");
+
+		OutputStream out = socket.getOutputStream();
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+	}
+
+	String REMOVE_LOCATION = "delete_location";
+	public boolean removeLocation(String strIsdn) throws Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		String strTransID = String.valueOf(miTransID);
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.header.command",REMOVE_LOCATION);
+		msgRequest.setValue("uinml.data.transid",strTransID);
+		msgRequest.setValue("uinml.data.msisdn",strIsdn);
+		msgRequest.setValue("uinml.data.position","1");
+
+		OutputStream out = socket.getOutputStream();
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+	}
+
+	public static final String ADD_CIRCLE = "add_calling_circle_member";
+	public boolean addCircleMember(String strCircle,String strIsdn) throws Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		String strTransID = String.valueOf(miTransID);
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.header.command",ADD_CIRCLE);
+		msgRequest.setValue("uinml.data.transid",strTransID);
+		msgRequest.setValue("uinml.data.msisdn",strIsdn);
+
+		msgRequest.setValue("uinml.data.circle_name",strCircle);
+
+		OutputStream out = socket.getOutputStream();
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+	}
+
+	public static final String REMOVE_CIRCLE = "remove_calling_circle_member";
+	public boolean removeCircleMember(String strCircle,String strIsdn) throws Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		String strTransID = String.valueOf(miTransID);
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.header.command",REMOVE_CIRCLE);
+		msgRequest.setValue("uinml.data.transid",strTransID);
+		msgRequest.setValue("uinml.data.msisdn",strIsdn);
+
+		msgRequest.setValue("uinml.data.circle_name",strCircle);
+
+		OutputStream out = socket.getOutputStream();
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+	}
+
+	public static final String SET_PC = "set_periodiccharge_2";
+	public boolean setPeriodCharge(String strISDN,String chargeId,String startDate,String endDate) throws IOException,Exception
+	{
+		boolean bl = true;
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",SET_PC);
+		msgRequest.setValue("uinml.data.msisdn",strISDN);
+		msgRequest.setValue("uinml.data.charg_id",chargeId);
+		msgRequest.setValue("uinml.data.start_date",startDate);
+		msgRequest.setValue("uinml.data.end_date",endDate);
+
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+	public boolean setAccALO(String strIsdn,String accValue) throws IOException,Exception
+	{
+		boolean bl = true;
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command","set_acc");
+		msgRequest.setValue("uinml.data.msisdn",strIsdn);
+		msgRequest.setValue("uinml.data.accname","ALO");
+		msgRequest.setValue("uinml.data.accvalue",accValue);
+
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			return false;
+		}
+
+	}
+
+	public static final String ADD_BONUS = "create_prom_plan";
+	public boolean addBonusPlan(String strIsdn,String planId) throws IOException,Exception
+	{
+		boolean bl = true;
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",ADD_BONUS);
+		msgRequest.setValue("uinml.data.msisdn",strIsdn);
+		msgRequest.setValue("uinml.data.promid",planId);
+
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
+	public static final String REMOVE_BONUS = "delete_prom_plan";
+	public boolean removeBonusPlan(String strIsdn,String planId) throws IOException,Exception
+	{
+		boolean bl = true;
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",REMOVE_BONUS);
+		msgRequest.setValue("uinml.data.msisdn",strIsdn);
+		msgRequest.setValue("uinml.data.promid",planId);
+
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			return false;
+		}
+
+	}
+
+	public static final String CREATE_GROUP_ACCOUNT = "create_group_account";
+	public boolean createGroupAccount(String groupid,String groupName,String mstrIsdn) throws IOException,Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",CREATE_GROUP_ACCOUNT);
+		msgRequest.setValue("uinml.data.msisdn",mstrIsdn);
+		msgRequest.setValue("uinml.data.groupid",groupid);
+		msgRequest.setValue("uinml.data.group_name",groupName);
+
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+		if(strStatus.equals("0")){
+			return true;
+		}
+		else{
+			mstrMessage = msgResponse.getValue("uinml.data.message");
+			return false;
+		}
+	}
+	public static final String CREATE_PHONEBOOK = "create_phonebook";
+	public boolean createPhonebook(String strISDN,String position,String value) throws IOException,Exception
+	{
+		XMLMessage msgRequest = new XMLMessage();
+		miTransID++;
+		msgRequest.setValue("uinml.header.session",mstrSessionID);
+		msgRequest.setValue("uinml.data.transid","" + miTransID);
+		msgRequest.setValue("uinml.header.command",CREATE_PHONEBOOK);
+		msgRequest.setValue("uinml.data.msisdn",strISDN);
+		msgRequest.setValue("uinml.data.position",position);
+		msgRequest.setValue("uinml.data.value",value);
+		OutputStream out = socket.getOutputStream();
+
+		synchronized(out){
+			msgRequest.store(out);
+			out.flush();
+		}
+
+		byte[] bt;
+		synchronized(is){
+			bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(is,TERMINATED_SYMBOL);
+		}
+		int iIndex = 0;
+		while(bt[iIndex] <= 32 && iIndex < bt.length){
+			iIndex++;
+		}
+
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt,iIndex,bt.length - iIndex));
+		String strStatus = msgResponse.getValue("uinml.data.status");
+
+		if(strStatus.equals("0")){
+			return true;
+		}
+		return false;
+	}
+
+	public void fillParameter(String strHost,int iPort,String strUserName,String strPassword,int iMintKeepAliveInterval) throws AppException
+	{
+		host = strHost;
+		port = iPort;
+		username = strUserName;
+		password = strPassword;
+		mintKeepAliveInterval = iMintKeepAliveInterval;
+
+	}
+
+	public void connect() throws Exception
+	{
+		socket = new Socket(host,port);
+		XMLMessage msgRequest = new XMLMessage();
+		msgRequest.setValue("uinml.header.session","0");
+		msgRequest.setValue("uinml.header.command",CONNECT_COMMAND);
+		msgRequest.setValue("uinml.data.username",username);
+		msgRequest.setValue("uinml.data.password",password);
+		msgRequest.store(socket.getOutputStream());
+		socket.getOutputStream().flush();
+
+		byte[] bt = com.fss.util.StreamUtil.getDataTerminatedBySymbol(socket.getInputStream(),TERMINATED_SYMBOL);
+		XMLMessage msgResponse = new XMLMessage(new ByteArrayInputStream(bt));
+		String strStatus = msgResponse.getValue("uinml.header.status");
+		//logMonitor("Request is: " + msgRequest.toString());
+		//logMonitor("Response is: " + msgResponse.getContent());
+		if(strStatus == null || !strStatus.equals("0")){
+			throw new Exception(msgResponse.getValue("uinml.data.errormessage"));
+		}
+		mstrSessionID = msgResponse.getValue("uinml.header.session");
+
+		if(mstrSessionID == null){
+			throw new Exception("Session id not found in response message");
+		}
+		is = socket.getInputStream();
+		mlngNextSendKeepAlive = System.currentTimeMillis() + mintKeepAliveInterval;
+	}
+
+	public void disconnect()
+	{
+		if(socket != null){
+			try{
+				XMLMessage msgRequest = new XMLMessage();
+				msgRequest.setValue("uinml.header.session",mstrSessionID);
+				msgRequest.setValue("uinml.header.command",EXIT_COMMAND);
+				msgRequest.store(socket.getOutputStream());
+				socket.getOutputStream().flush();
+				Thread.sleep(5000);
+				socket.close();
+			}
+			catch(Exception e){
+				e.printStackTrace();
+			}
+			socket = null;
+		}
+	}
+}

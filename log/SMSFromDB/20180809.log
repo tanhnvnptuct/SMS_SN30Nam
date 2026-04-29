@@ -1,0 +1,27 @@
+09/08 11:14:44 Send SMS from db started
+09/08 11:14:44 mstrSqlGet select * from sms_mt_1558 where status in (0, 2) order by submit_time
+09/08 11:14:44 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+09/08 11:18:58 Send SMS from db started
+09/08 11:18:58 mstrSqlGet select * from sms_mt_1558 where status in (0, 2) order by submit_time
+09/08 11:18:58 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+09/08 11:18:59 Error occured: Invalid column name
+09/08 11:19:29 mstrSqlGet select * from sms_mt_1558 where status in (0, 2) order by submit_time
+09/08 11:19:29 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+09/08 11:19:30 Error occured: Invalid column name
+09/08 11:20:00 mstrSqlGet select * from sms_mt_1558 where status in (0, 2) order by submit_time
+09/08 11:20:00 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+09/08 11:20:00 Error occured: Invalid column name
+09/08 11:20:30 mstrSqlGet select * from sms_mt_1558 where status in (0, 2) order by submit_time
+09/08 11:20:30 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+09/08 11:20:31 Error occured: Invalid column name
+09/08 11:20:50 Send SMS from db started
+09/08 11:20:50 mstrSqlGet select * from sms_mt_1558 where status in (0, 2) order by submit_time
+09/08 11:20:50 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+09/08 11:20:54 Error occured: Invalid column name
+09/08 11:21:27 Send SMS from db started
+09/08 11:21:27 mstrSqlGet select * from sms_mt_1558 where status in (0, 2) order by submit_time
+09/08 11:21:27 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+09/08 11:21:28 Error occured: Invalid column name
+09/08 11:21:58 mstrSqlGet select * from sms_mt_1558 where status in (0, 2) order by submit_time
+09/08 11:21:58 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?
+09/08 11:21:58 Error occured: Invalid column name

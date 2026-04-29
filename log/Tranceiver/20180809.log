@@ -1,0 +1,334 @@
+09/08 11:14:43 SMS Tranceiver 1558 started
+09/08 11:14:43 Start binding to SMSC server....
+09/08 11:14:43 Binding with bind-mode: tr and sync-mode: a
+09/08 11:14:43 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:14:44 No response from smsc,please check the parammeters.
+09/08 11:14:44 Going to unbind
+09/08 11:14:44 Not bound, cannot unbind.
+09/08 11:14:45 Start binding to SMSC server....
+09/08 11:14:45 Binding with bind-mode: tr and sync-mode: a
+09/08 11:14:45 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:14:49 No response from smsc,please check the parammeters.
+09/08 11:14:49 Going to unbind
+09/08 11:14:49 Not bound, cannot unbind.
+09/08 11:14:50 Start binding to SMSC server....
+09/08 11:14:50 Binding with bind-mode: tr and sync-mode: a
+09/08 11:14:50 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:14:54 No response from smsc,please check the parammeters.
+09/08 11:14:55 Going to unbind
+09/08 11:14:55 Not bound, cannot unbind.
+09/08 11:14:56 Start binding to SMSC server....
+09/08 11:14:56 Binding with bind-mode: tr and sync-mode: a
+09/08 11:14:56 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:14:59 No response from smsc,please check the parammeters.
+09/08 11:15:00 Going to unbind
+09/08 11:15:00 Not bound, cannot unbind.
+09/08 11:15:01 Start binding to SMSC server....
+09/08 11:15:01 Binding with bind-mode: tr and sync-mode: a
+09/08 11:15:01 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:15:05 No response from smsc,please check the parammeters.
+09/08 11:15:05 Going to unbind
+09/08 11:15:05 Not bound, cannot unbind.
+09/08 11:15:06 Start binding to SMSC server....
+09/08 11:15:06 Binding with bind-mode: tr and sync-mode: a
+09/08 11:15:06 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:15:10 No response from smsc,please check the parammeters.
+09/08 11:15:10 Going to unbind
+09/08 11:15:10 Not bound, cannot unbind.
+09/08 11:15:11 Start binding to SMSC server....
+09/08 11:15:11 Binding with bind-mode: tr and sync-mode: a
+09/08 11:15:11 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:15:15 No response from smsc,please check the parammeters.
+09/08 11:15:15 Going to unbind
+09/08 11:15:15 Not bound, cannot unbind.
+09/08 11:15:16 Start binding to SMSC server....
+09/08 11:15:16 Binding with bind-mode: tr and sync-mode: a
+09/08 11:15:16 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:15:20 No response from smsc,please check the parammeters.
+09/08 11:15:20 Going to unbind
+09/08 11:15:20 Not bound, cannot unbind.
+09/08 11:15:21 Start binding to SMSC server....
+09/08 11:15:21 Binding with bind-mode: tr and sync-mode: a
+09/08 11:15:21 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:15:25 No response from smsc,please check the parammeters.
+09/08 11:15:25 Going to unbind
+09/08 11:15:25 Not bound, cannot unbind.
+09/08 11:15:26 Start binding to SMSC server....
+09/08 11:15:26 Binding with bind-mode: tr and sync-mode: a
+09/08 11:15:26 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:15:30 No response from smsc,please check the parammeters.
+09/08 11:15:30 Going to unbind
+09/08 11:15:30 Not bound, cannot unbind.
+09/08 11:15:31 Start binding to SMSC server....
+09/08 11:15:31 Binding with bind-mode: tr and sync-mode: a
+09/08 11:15:31 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:15:35 No response from smsc,please check the parammeters.
+09/08 11:15:35 Going to unbind
+09/08 11:15:35 Not bound, cannot unbind.
+09/08 11:15:36 Start binding to SMSC server....
+09/08 11:15:36 Binding with bind-mode: tr and sync-mode: a
+09/08 11:15:36 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:15:40 No response from smsc,please check the parammeters.
+09/08 11:15:40 Going to unbind
+09/08 11:15:40 Not bound, cannot unbind.
+09/08 11:15:41 Start binding to SMSC server....
+09/08 11:15:41 Binding with bind-mode: tr and sync-mode: a
+09/08 11:15:41 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:15:45 No response from smsc,please check the parammeters.
+09/08 11:15:46 Going to unbind
+09/08 11:15:46 Not bound, cannot unbind.
+09/08 11:15:47 Start binding to SMSC server....
+09/08 11:15:47 Binding with bind-mode: tr and sync-mode: a
+09/08 11:15:47 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:15:50 No response from smsc,please check the parammeters.
+09/08 11:15:51 Going to unbind
+09/08 11:15:51 Not bound, cannot unbind.
+09/08 11:15:52 Start binding to SMSC server....
+09/08 11:15:52 Binding with bind-mode: tr and sync-mode: a
+09/08 11:15:52 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:15:56 No response from smsc,please check the parammeters.
+09/08 11:15:56 Going to unbind
+09/08 11:15:56 Not bound, cannot unbind.
+09/08 11:15:57 Start binding to SMSC server....
+09/08 11:15:57 Binding with bind-mode: tr and sync-mode: a
+09/08 11:15:57 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:16:01 No response from smsc,please check the parammeters.
+09/08 11:16:01 Going to unbind
+09/08 11:16:01 Not bound, cannot unbind.
+09/08 11:16:02 Start binding to SMSC server....
+09/08 11:16:02 Binding with bind-mode: tr and sync-mode: a
+09/08 11:16:02 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:16:06 No response from smsc,please check the parammeters.
+09/08 11:16:06 Going to unbind
+09/08 11:16:06 Not bound, cannot unbind.
+09/08 11:16:07 Start binding to SMSC server....
+09/08 11:16:07 Binding with bind-mode: tr and sync-mode: a
+09/08 11:16:07 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:16:11 No response from smsc,please check the parammeters.
+09/08 11:16:11 Going to unbind
+09/08 11:16:11 Not bound, cannot unbind.
+09/08 11:16:12 Start binding to SMSC server....
+09/08 11:16:12 Binding with bind-mode: tr and sync-mode: a
+09/08 11:16:12 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:16:16 No response from smsc,please check the parammeters.
+09/08 11:16:16 Going to unbind
+09/08 11:16:16 Not bound, cannot unbind.
+09/08 11:18:57 SMS Tranceiver 1558 started
+09/08 11:18:57 Start binding to SMSC server....
+09/08 11:18:57 Binding with bind-mode: tr and sync-mode: a
+09/08 11:18:57 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:18:59 No response from smsc,please check the parammeters.
+09/08 11:18:59 Going to unbind
+09/08 11:18:59 Not bound, cannot unbind.
+09/08 11:19:00 Start binding to SMSC server....
+09/08 11:19:00 Binding with bind-mode: tr and sync-mode: a
+09/08 11:19:00 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:19:04 No response from smsc,please check the parammeters.
+09/08 11:19:04 Going to unbind
+09/08 11:19:04 Not bound, cannot unbind.
+09/08 11:19:05 Start binding to SMSC server....
+09/08 11:19:05 Binding with bind-mode: tr and sync-mode: a
+09/08 11:19:05 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:19:09 No response from smsc,please check the parammeters.
+09/08 11:19:10 Going to unbind
+09/08 11:19:10 Not bound, cannot unbind.
+09/08 11:19:11 Start binding to SMSC server....
+09/08 11:19:11 Binding with bind-mode: tr and sync-mode: a
+09/08 11:19:11 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:19:14 No response from smsc,please check the parammeters.
+09/08 11:19:15 Going to unbind
+09/08 11:19:15 Not bound, cannot unbind.
+09/08 11:19:16 Start binding to SMSC server....
+09/08 11:19:16 Binding with bind-mode: tr and sync-mode: a
+09/08 11:19:16 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:19:20 No response from smsc,please check the parammeters.
+09/08 11:19:20 Going to unbind
+09/08 11:19:20 Not bound, cannot unbind.
+09/08 11:19:21 Start binding to SMSC server....
+09/08 11:19:21 Binding with bind-mode: tr and sync-mode: a
+09/08 11:19:21 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:19:25 No response from smsc,please check the parammeters.
+09/08 11:19:25 Going to unbind
+09/08 11:19:25 Not bound, cannot unbind.
+09/08 11:19:26 Start binding to SMSC server....
+09/08 11:19:26 Binding with bind-mode: tr and sync-mode: a
+09/08 11:19:26 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:19:30 No response from smsc,please check the parammeters.
+09/08 11:19:30 Going to unbind
+09/08 11:19:30 Not bound, cannot unbind.
+09/08 11:19:31 Start binding to SMSC server....
+09/08 11:19:31 Binding with bind-mode: tr and sync-mode: a
+09/08 11:19:31 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:19:35 No response from smsc,please check the parammeters.
+09/08 11:19:35 Going to unbind
+09/08 11:19:35 Not bound, cannot unbind.
+09/08 11:19:36 Start binding to SMSC server....
+09/08 11:19:36 Binding with bind-mode: tr and sync-mode: a
+09/08 11:19:36 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:19:40 No response from smsc,please check the parammeters.
+09/08 11:19:40 Going to unbind
+09/08 11:19:40 Not bound, cannot unbind.
+09/08 11:19:41 Start binding to SMSC server....
+09/08 11:19:41 Binding with bind-mode: tr and sync-mode: a
+09/08 11:19:41 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:19:45 No response from smsc,please check the parammeters.
+09/08 11:19:45 Going to unbind
+09/08 11:19:45 Not bound, cannot unbind.
+09/08 11:19:46 Start binding to SMSC server....
+09/08 11:19:46 Binding with bind-mode: tr and sync-mode: a
+09/08 11:19:46 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:19:50 No response from smsc,please check the parammeters.
+09/08 11:19:50 Going to unbind
+09/08 11:19:50 Not bound, cannot unbind.
+09/08 11:19:51 Start binding to SMSC server....
+09/08 11:19:51 Binding with bind-mode: tr and sync-mode: a
+09/08 11:19:51 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:19:55 No response from smsc,please check the parammeters.
+09/08 11:19:55 Going to unbind
+09/08 11:19:55 Not bound, cannot unbind.
+09/08 11:19:56 Start binding to SMSC server....
+09/08 11:19:56 Binding with bind-mode: tr and sync-mode: a
+09/08 11:19:56 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:20:00 No response from smsc,please check the parammeters.
+09/08 11:20:00 Going to unbind
+09/08 11:20:00 Not bound, cannot unbind.
+09/08 11:20:01 Start binding to SMSC server....
+09/08 11:20:01 Binding with bind-mode: tr and sync-mode: a
+09/08 11:20:01 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:20:05 No response from smsc,please check the parammeters.
+09/08 11:20:06 Going to unbind
+09/08 11:20:06 Not bound, cannot unbind.
+09/08 11:20:07 Start binding to SMSC server....
+09/08 11:20:07 Binding with bind-mode: tr and sync-mode: a
+09/08 11:20:07 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:20:10 No response from smsc,please check the parammeters.
+09/08 11:20:11 Going to unbind
+09/08 11:20:11 Not bound, cannot unbind.
+09/08 11:20:12 Start binding to SMSC server....
+09/08 11:20:12 Binding with bind-mode: tr and sync-mode: a
+09/08 11:20:12 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:20:16 No response from smsc,please check the parammeters.
+09/08 11:20:16 Going to unbind
+09/08 11:20:16 Not bound, cannot unbind.
+09/08 11:20:17 Start binding to SMSC server....
+09/08 11:20:17 Binding with bind-mode: tr and sync-mode: a
+09/08 11:20:17 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:20:21 No response from smsc,please check the parammeters.
+09/08 11:20:21 Going to unbind
+09/08 11:20:21 Not bound, cannot unbind.
+09/08 11:20:22 Start binding to SMSC server....
+09/08 11:20:22 Binding with bind-mode: tr and sync-mode: a
+09/08 11:20:22 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:20:26 No response from smsc,please check the parammeters.
+09/08 11:20:26 Going to unbind
+09/08 11:20:26 Not bound, cannot unbind.
+09/08 11:20:27 Start binding to SMSC server....
+09/08 11:20:27 Binding with bind-mode: tr and sync-mode: a
+09/08 11:20:27 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:20:31 No response from smsc,please check the parammeters.
+09/08 11:20:31 Going to unbind
+09/08 11:20:31 Not bound, cannot unbind.
+09/08 11:20:32 Start binding to SMSC server....
+09/08 11:20:32 Binding with bind-mode: tr and sync-mode: a
+09/08 11:20:32 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:20:36 No response from smsc,please check the parammeters.
+09/08 11:20:36 Going to unbind
+09/08 11:20:36 Not bound, cannot unbind.
+09/08 11:20:37 Start binding to SMSC server....
+09/08 11:20:37 Binding with bind-mode: tr and sync-mode: a
+09/08 11:20:37 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:20:49 SMS Tranceiver 1558 started
+09/08 11:20:49 Start binding to SMSC server....
+09/08 11:20:49 Binding with bind-mode: tr and sync-mode: a
+09/08 11:20:49 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:20:51 No response from smsc,please check the parammeters.
+09/08 11:20:51 Going to unbind
+09/08 11:20:51 Not bound, cannot unbind.
+09/08 11:20:52 Start binding to SMSC server....
+09/08 11:20:52 Binding with bind-mode: tr and sync-mode: a
+09/08 11:20:52 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:20:56 No response from smsc,please check the parammeters.
+09/08 11:20:56 Going to unbind
+09/08 11:20:56 Not bound, cannot unbind.
+09/08 11:20:57 Start binding to SMSC server....
+09/08 11:20:57 Binding with bind-mode: tr and sync-mode: a
+09/08 11:20:57 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:21:01 No response from smsc,please check the parammeters.
+09/08 11:21:02 Going to unbind
+09/08 11:21:02 Not bound, cannot unbind.
+09/08 11:21:03 Start binding to SMSC server....
+09/08 11:21:03 Binding with bind-mode: tr and sync-mode: a
+09/08 11:21:03 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:21:06 No response from smsc,please check the parammeters.
+09/08 11:21:07 Going to unbind
+09/08 11:21:07 Not bound, cannot unbind.
+09/08 11:21:08 Start binding to SMSC server....
+09/08 11:21:08 Binding with bind-mode: tr and sync-mode: a
+09/08 11:21:08 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:21:12 No response from smsc,please check the parammeters.
+09/08 11:21:12 Going to unbind
+09/08 11:21:12 Not bound, cannot unbind.
+09/08 11:21:13 Start binding to SMSC server....
+09/08 11:21:13 Binding with bind-mode: tr and sync-mode: a
+09/08 11:21:13 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:21:17 No response from smsc,please check the parammeters.
+09/08 11:21:17 Going to unbind
+09/08 11:21:17 Not bound, cannot unbind.
+09/08 11:21:18 Start binding to SMSC server....
+09/08 11:21:18 Binding with bind-mode: tr and sync-mode: a
+09/08 11:21:18 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:21:22 No response from smsc,please check the parammeters.
+09/08 11:21:22 Going to unbind
+09/08 11:21:22 Not bound, cannot unbind.
+09/08 11:21:23 Start binding to SMSC server....
+09/08 11:21:23 Binding with bind-mode: tr and sync-mode: a
+09/08 11:21:23 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:21:26 SMS Tranceiver 1558 started
+09/08 11:21:26 Start binding to SMSC server....
+09/08 11:21:26 Binding with bind-mode: tr and sync-mode: a
+09/08 11:21:26 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:21:27 No response from smsc,please check the parammeters.
+09/08 11:21:27 Going to unbind
+09/08 11:21:27 Not bound, cannot unbind.
+09/08 11:21:28 Start binding to SMSC server....
+09/08 11:21:28 Binding with bind-mode: tr and sync-mode: a
+09/08 11:21:28 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:21:32 No response from smsc,please check the parammeters.
+09/08 11:21:32 Going to unbind
+09/08 11:21:32 Not bound, cannot unbind.
+09/08 11:21:33 Start binding to SMSC server....
+09/08 11:21:33 Binding with bind-mode: tr and sync-mode: a
+09/08 11:21:33 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:21:37 No response from smsc,please check the parammeters.
+09/08 11:21:37 Going to unbind
+09/08 11:21:37 Not bound, cannot unbind.
+09/08 11:21:38 Start binding to SMSC server....
+09/08 11:21:38 Binding with bind-mode: tr and sync-mode: a
+09/08 11:21:38 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:21:42 No response from smsc,please check the parammeters.
+09/08 11:21:42 Going to unbind
+09/08 11:21:42 Not bound, cannot unbind.
+09/08 11:21:43 Start binding to SMSC server....
+09/08 11:21:43 Binding with bind-mode: tr and sync-mode: a
+09/08 11:21:43 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:21:47 No response from smsc,please check the parammeters.
+09/08 11:21:47 Going to unbind
+09/08 11:21:47 Not bound, cannot unbind.
+09/08 11:21:48 Start binding to SMSC server....
+09/08 11:21:48 Binding with bind-mode: tr and sync-mode: a
+09/08 11:21:48 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:21:52 No response from smsc,please check the parammeters.
+09/08 11:21:53 Going to unbind
+09/08 11:21:53 Not bound, cannot unbind.
+09/08 11:21:54 Start binding to SMSC server....
+09/08 11:21:54 Binding with bind-mode: tr and sync-mode: a
+09/08 11:21:54 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:21:57 No response from smsc,please check the parammeters.
+09/08 11:21:58 Going to unbind
+09/08 11:21:58 Not bound, cannot unbind.
+09/08 11:21:59 Start binding to SMSC server....
+09/08 11:21:59 Binding with bind-mode: tr and sync-mode: a
+09/08 11:21:59 Bind request (bindreq: 1558 GEN 52 (addrrang: 1 1 1558) ) 
+09/08 11:22:03 No response from smsc,please check the parammeters.
+09/08 11:22:03 Going to unbind
+09/08 11:22:03 Not bound, cannot unbind.

@@ -1,0 +1,30 @@
+31/10 09:54:10 Send SMS from db started
+31/10 09:54:10 Error occured: null
+31/10 09:54:14 Start performing immediate execution
+31/10 09:54:14 Error occured: null
+31/10 09:54:14 Immediate execution completed
+31/10 09:54:25 Send SMS from db started
+31/10 09:54:51 Send SMS from db started
+31/10 09:54:59 Start performing immediate execution
+31/10 09:54:59 Error occured: Thread is running
+31/10 09:54:59 Immediate execution completed
+31/10 09:55:08 Error occured: null
+31/10 09:55:14 Start performing immediate execution
+31/10 09:55:23 Error occured: Thread is running
+31/10 09:55:38 Error occured: Thread is running
+31/10 09:55:53 Error occured: Thread is running
+31/10 10:02:48 Send SMS from db started
+31/10 10:03:19 Send SMS from db started
+31/10 10:04:15 Error occured: null
+31/10 10:04:23 Start performing immediate execution
+31/10 10:04:30 Error occured: Thread is running
+31/10 10:04:45 Error occured: Thread is running
+31/10 10:04:47 Error occured: null
+31/10 10:04:47 Immediate execution completed
+31/10 10:46:05 Send SMS from db started
+31/10 10:47:52 Send SMS from db started
+31/10 10:47:55 Error occured: ORA-01017: invalid username/password; logon denied
+
+31/10 10:48:21 Send SMS from db started
+31/10 10:48:22 mstrSqlGet select * from sms_mt_1558 where submit_time >= trunc(sysdate-1) and submit_time < trunc(sysdate+1) and status in (0, 2) and campaign_id in (1558) and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time
+31/10 10:48:22 psUpdateQueue update sms_mt_1558 set status =1, sent_time = sysdate where id = ?

@@ -1,0 +1,72 @@
+EncryptAlgorithm==SHA
+DateFormat==dd/MM/yyyy
+DateTimeFormat==dd/MM/yyyy HH:mm:ss
+OracleDateTime==dd/mm/yyyy hh24:mi:ss
+TimeFormat==HH:mm:ss
+CurrencyFormat==#,###
+ConnectionPoolSize==10
+MaxInactiveInterval==3000
+MaxConnectionAllowed==10
+DefaultMPIN==123456
+MSISDNPrefix==0
+SendMSISDNPrefix==84
+MSISDNLengthMin==11
+MaxIgoneRequest==5
+MinIngwHealthyPoint==2
+MsgTimedOut==300
+DataDir==AppDir
+#Time out by seconds
+Thread
+	PortID==1558
+	ActionLog==log/general/action.log
+	LogFile==log/general/error.log
+DefaultDatabase==PROMOTION
+Connection
+	CCBS
+		Url==jdbc:oracle:thin:@10.149.34.119:1521/ccbs
+		UserName==ccs_sync
+		Password==sync$234
+	ASPAM
+		Url==jdbc:oracle:thin:@10.149.248.57/qlctv
+		UserName==ASPAM
+		Password==abc#123
+	PROMOTION
+		Url==jdbc:oracle:thin:@10.156.3.252/drportal
+		Driver==oracle.jdbc.OracleDriver
+		UserName==promotion
+		Password==promotion
+	WINNER
+		Url==jdbc:oracle:thin:@10.156.3.252/drportal
+		Driver==oracle.jdbc.OracleDriver
+		UserName==WINNER
+		Password==winwin		
+	SQLSERVER
+		Url==jdbc:sqlserver://10.149.248.80;databaseName=HT_HTKTTT
+		Driver==com.microsoft.sqlserver.jdbc.SQLServerDriver
+		UserName==sa
+		Password==123Abc!@#
+	EWALLET
+		Url==jdbc:oracle:thin:@10.149.248.35/dbapp
+		Driver==oracle.jdbc.OracleDriver
+		UserName==ewallet
+		Password==ewallet2014
+	IPARKING
+		Url==jdbc:oracle:thin:@10.149.248.57/qlctv
+		Driver==oracle.jdbc.OracleDriver
+		UserName==iparking
+		Password==abc#123
+	SERVICESALES
+		Url==jdbc:oracle:thin:@//10.156.3.90:1521/drvnpsim
+		Driver==oracle.jdbc.OracleDriver
+		UserName==service_sales
+		Password==service123654
+	INTERC
+		Url==jdbc:oracle:thin:@//10.149.3.206/cp
+		Driver==oracle.jdbc.OracleDriver
+		UserName==interc
+		Password==interc123$
+	WEBALERT
+		Url==jdbc:oracle:thin:@//10.156.5.4/dbms
+		Driver==oracle.jdbc.OracleDriver
+		UserName==web_alert
+		Password==web_alert123#

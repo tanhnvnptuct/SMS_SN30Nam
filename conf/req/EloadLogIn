@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mwal="http://mwallet.fss.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mwal:login soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <in xsi:type="mwal:BasicInput">
+            <username xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">$user_name</username>
+            <password xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">$sha_password</password>
+            <agentMsIsdn xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">$source_msisdn</agentMsIsdn>
+         </in>
+      </mwal:login>
+   </soapenv:Body>
+</soapenv:Envelope>

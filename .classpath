@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/activation.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/asocat-20100626.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/axis.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/axis-ant.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/bcprov-jdk14-139.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/bcprov-jdk15-139.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/bsh-core-2.0b4.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/cacheonix.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/commons-beanutils-1.8.2.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/commons-compress-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/commons-email-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/commons-io-2.0.1.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/commons-net-1.4.0.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/commons-net-1.4.1.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/commons-pool-1.5.6.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/comverse.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/DBPool-4.9.3-JDBC3.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/edtftpj.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/ehcache-2.9.1.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/FSSServerLib.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/guava-21.0.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/hessian-4.0.7.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/httpclient-4.3.6.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/httpclient-cache-4.3.6.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/httpcore-4.3.3.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/INHLRGatewayCore.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/jakarta-oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/janino-2.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/javax.wsdl_1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/jaxen-1.1.6.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/jcifs-1.3.17.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/jvftplib.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/jxl.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/mail.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/org.apache.commons.httpclient.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/org.apache.commons.logging_1.0.4.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/org.apache.commons.logging_1.0.4.v201005080501.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/org.json.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/plexus-utils-1.5.7.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/poi-3.14-20160307.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/saaj.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/serializer.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/servlet-api-2.5-20081211.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/slf4j-api-1.5.10.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/slf4j-log4j12-1.5.10.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/SMApplet.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/smartclient.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/smartserver.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/smartservice.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/SMAServlet.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/smpp.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/sqljdbc4-2.0.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/trilead-ssh2-build213.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/velocity-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/wsdl4j-1.5.1.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/wss4j-1.5.3.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/xalan.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="D:/Java Project/smsgw/lib/xmlsec-1.4.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

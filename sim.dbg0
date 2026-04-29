@@ -1,0 +1,186 @@
+10:48:20 Thread-4: main() trace group 18 deactivated
+10:48:20    Thread-4: TCPIPConnection.open entered
+10:48:20    Thread-4: TCPIPConnection.open opened client tcp/ip connection to 10.149.97.60 on port 5020 (7)
+10:48:20    Thread-4: TCPIPConnection.open exited
+10:48:20       Thread-4: Session.send(Request) entered
+10:48:20       Thread-4: Session.send(Request) Sending request (bindreq: (pdu: 0 9 0 [1]) bsmseone cnTT@178 GEN 52 (addrrang: 1 1 22268) )  (4)
+10:48:20          Thread-4: Transmitter.send entered
+10:48:20          Thread-4: Transmitter.send going to send pdu's data over connection (7)
+10:48:20          Thread-4: Transmitter.send PDU.getData() build up data 0000002f00000009000000000000000162736d73656f6e6500636e5454403137380047454e00340101323232363800 (5)
+10:48:20             Thread-4: TCPIPConnection.send entered
+10:48:20             Thread-4: TCPIPConnection.send sent 47 bytes to 10.149.97.60 on port 5020 (7)
+10:48:20             Thread-4: TCPIPConnection.send exited
+10:48:20          Thread-4: Transmitter.send successfully sent pdu's data over connection (7)
+10:48:20          Thread-4: Transmitter.send exited
+10:48:20       Thread-4: Session.send(Request) Going to receive response. Expecting (bindresp: (pdu: 0 80000009 0 1) )  (4)
+10:48:20       Thread-4: Session.send(Request) receivePDU: Going to receive response. (1)
+10:48:20       Thread-4: Session.send(Request) Is transmitter only => trying to receive from connection. (1)
+10:48:20       Thread-4: Session.send(Request) ReceiverBase.receivePDUFromConnection start (3)
+10:48:20          Thread-4: TCPIPConnection.receive entered
+10:48:20          Thread-4: TCPIPConnection.receive going to read from socket (8)
+10:48:20          Thread-4: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+10:48:21          Thread-4: TCPIPConnection.receive read 30 bytes from socket (8)
+10:48:21          Thread-4: TCPIPConnection.receive no more data remains in the socket (8)
+10:48:21          Thread-4: TCPIPConnection.receive totally read 30 bytes from socket (7)
+10:48:21          Thread-4: TCPIPConnection.receive exited
+10:48:21       Thread-4: Session.send(Request) trying to create pdu from unprocessed buffer (1)
+10:48:21       Thread-4: Session.send(Request) PDU.setData() parsing header 0000001e800000090000000000000001 (5)
+10:48:21       Thread-4: Session.send(Request) PDU.setData() parsing body 62736d73656f6e65000210000134 (5)
+10:48:21       Thread-4: Session.send(Request) have 5 bytes left. (5)
+10:48:21       Thread-4: Session.send(Request) received complete pdu(bindresp: (pdu: 30 80000009 0 1) bsmseone 52)  (1)
+10:48:21       Thread-4: Session.send(Request) there is 0 bytes left in unprocessed buffer (1)
+10:48:21       Thread-4: Session.send(Request) ReceiverBase.receivePDUFromConnection finished (3)
+10:48:21       Thread-4: Session.send(Request) Got pdu (bindresp: (pdu: 30 80000009 0 1) bsmseone 52)  (1)
+10:48:21       Thread-4: Session.send(Request) Got response(?) pdu (bindresp: (pdu: 30 80000009 0 1) bsmseone 52)  (4)
+10:48:21       Thread-4: Session.send(Request) checking response if it's what we expected. (4)
+10:48:21       Thread-4: Session.send(Request) exited
+10:48:21    Thread-4: main() Receiver starting (1)
+10:48:21       Thread-4: Receiver.start() entered
+10:48:21    Receiver-1: Receiver.run() entered
+10:48:21    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+10:48:21    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+10:48:21       Receiver-1: TCPIPConnection.receive entered
+10:48:21       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+10:48:21       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+10:48:21       Thread-4: Receiver.start() exited
+10:48:21    Thread-4: main() Receiver started (1)
+10:48:21       Thread-4: Session.send(Request) entered
+10:48:21       Thread-4: Session.send(Request) Sending request (enquirelink: (pdu: 0 15 0 [2]) )  (4)
+10:48:21          Thread-4: Transmitter.send entered
+10:48:21          Thread-4: Transmitter.send going to send pdu's data over connection (7)
+10:48:21          Thread-4: Transmitter.send PDU.getData() build up data 00000010000000150000000000000002 (5)
+10:48:21             Thread-4: TCPIPConnection.send entered
+10:48:21             Thread-4: TCPIPConnection.send sent 16 bytes to 10.149.97.60 on port 5020 (7)
+10:48:21             Thread-4: TCPIPConnection.send exited
+10:48:21          Thread-4: Transmitter.send successfully sent pdu's data over connection (7)
+10:48:21          Thread-4: Transmitter.send exited
+10:48:21       Thread-4: Session.send(Request) exited
+10:48:21       Receiver-1: TCPIPConnection.receive read 16 bytes from socket (8)
+10:48:21       Receiver-1: TCPIPConnection.receive no more data remains in the socket (8)
+10:48:21       Receiver-1: TCPIPConnection.receive totally read 16 bytes from socket (7)
+10:48:21       Receiver-1: TCPIPConnection.receive exited
+10:48:21    Receiver-1: Receiver.run() trying to create pdu from unprocessed buffer (1)
+10:48:21    Receiver-1: Receiver.run() PDU.setData() parsing header 00000010800000150000000000000002 (5)
+10:48:21    Receiver-1: Receiver.run() PDU.setData() no data for body (5)
+10:48:21    Receiver-1: Receiver.run() received complete pdu(enquirelink_resp: (pdu: 16 80000015 0 2) )  (1)
+10:48:21    Receiver-1: Receiver.run() there is 0 bytes left in unprocessed buffer (1)
+10:48:21    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection finished (3)
+10:48:21    Receiver-1: Receiver.run() Receiver.receiveAsync(): PDU received, processing (enquirelink_resp: (pdu: 16 80000015 0 2) )  (1)
+10:48:21    Receiver-1: Receiver.run() receiver passing pdu to ServerPDUEventListener (1)
+10:48:21    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+10:48:21    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+10:48:21       Receiver-1: TCPIPConnection.receive entered
+10:48:21       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+10:48:21       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+10:48:25       Receiver-1: TCPIPConnection.receive read 16 bytes from socket (8)
+10:48:25       Receiver-1: TCPIPConnection.receive no more data remains in the socket (8)
+10:48:25       Receiver-1: TCPIPConnection.receive totally read 16 bytes from socket (7)
+10:48:25       Receiver-1: TCPIPConnection.receive exited
+10:48:25    Receiver-1: Receiver.run() trying to create pdu from unprocessed buffer (1)
+10:48:25    Receiver-1: Receiver.run() PDU.setData() parsing header 0000001000000015000000001e5b8832 (5)
+10:48:25    Receiver-1: Receiver.run() PDU.setData() no data for body (5)
+10:48:25    Receiver-1: Receiver.run() received complete pdu(enquirelink: (pdu: 16 15 0 509315122) )  (1)
+10:48:25    Receiver-1: Receiver.run() there is 0 bytes left in unprocessed buffer (1)
+10:48:25    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection finished (3)
+10:48:25    Receiver-1: Receiver.run() Receiver.receiveAsync(): PDU received, processing (enquirelink: (pdu: 16 15 0 509315122) )  (1)
+10:48:25    Receiver-1: Receiver.run() receiver passing pdu to ServerPDUEventListener (1)
+10:48:25    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+10:48:25    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+10:48:25       Receiver-1: TCPIPConnection.receive entered
+10:48:25       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+10:48:25       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+10:48:25    Thread-9: Session.respond(Response) entered
+10:48:25    Thread-9: Session.respond(Response) Sending response (enquirelink_resp: (pdu: 0 80000015 0 509315122) )  (4)
+10:48:25       Thread-9: Transmitter.send entered
+10:48:25       Thread-9: Transmitter.send going to send pdu's data over connection (7)
+10:48:25       Thread-9: Transmitter.send PDU.getData() build up data 0000001080000015000000001e5b8832 (5)
+10:48:25          Thread-9: TCPIPConnection.send entered
+10:48:25          Thread-9: TCPIPConnection.send sent 16 bytes to 10.149.97.60 on port 5020 (7)
+10:48:25          Thread-9: TCPIPConnection.send exited
+10:48:25       Thread-9: Transmitter.send successfully sent pdu's data over connection (7)
+10:48:25       Thread-9: Transmitter.send exited
+10:48:25    Thread-9: Session.respond(Response) exited
+10:48:30       Receiver-1: TCPIPConnection.receive read 16 bytes from socket (8)
+10:48:30       Receiver-1: TCPIPConnection.receive no more data remains in the socket (8)
+10:48:30       Receiver-1: TCPIPConnection.receive totally read 16 bytes from socket (7)
+10:48:30       Receiver-1: TCPIPConnection.receive exited
+10:48:30    Receiver-1: Receiver.run() trying to create pdu from unprocessed buffer (1)
+10:48:30    Receiver-1: Receiver.run() PDU.setData() parsing header 0000001000000015000000001e5bd335 (5)
+10:48:30    Receiver-1: Receiver.run() PDU.setData() no data for body (5)
+10:48:30    Receiver-1: Receiver.run() received complete pdu(enquirelink: (pdu: 16 15 0 509334325) )  (1)
+10:48:30    Receiver-1: Receiver.run() there is 0 bytes left in unprocessed buffer (1)
+10:48:30    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection finished (3)
+10:48:30    Receiver-1: Receiver.run() Receiver.receiveAsync(): PDU received, processing (enquirelink: (pdu: 16 15 0 509334325) )  (1)
+10:48:30    Receiver-1: Receiver.run() receiver passing pdu to ServerPDUEventListener (1)
+10:48:30    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+10:48:30    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+10:48:30       Receiver-1: TCPIPConnection.receive entered
+10:48:30       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+10:48:30       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+10:48:30    Thread-7: Session.respond(Response) entered
+10:48:30    Thread-7: Session.respond(Response) Sending response (enquirelink_resp: (pdu: 0 80000015 0 509334325) )  (4)
+10:48:30       Thread-7: Transmitter.send entered
+10:48:30       Thread-7: Transmitter.send going to send pdu's data over connection (7)
+10:48:30       Thread-7: Transmitter.send PDU.getData() build up data 0000001080000015000000001e5bd335 (5)
+10:48:30          Thread-7: TCPIPConnection.send entered
+10:48:30          Thread-7: TCPIPConnection.send sent 16 bytes to 10.149.97.60 on port 5020 (7)
+10:48:30          Thread-7: TCPIPConnection.send exited
+10:48:30       Thread-7: Transmitter.send successfully sent pdu's data over connection (7)
+10:48:30       Thread-7: Transmitter.send exited
+10:48:30    Thread-7: Session.respond(Response) exited
+10:48:31       Thread-4: Session.send(Request) entered
+10:48:31       Thread-4: Session.send(Request) Sending request (enquirelink: (pdu: 0 15 0 [3]) )  (4)
+10:48:31          Thread-4: Transmitter.send entered
+10:48:31          Thread-4: Transmitter.send going to send pdu's data over connection (7)
+10:48:31          Thread-4: Transmitter.send PDU.getData() build up data 00000010000000150000000000000003 (5)
+10:48:31             Thread-4: TCPIPConnection.send entered
+10:48:31             Thread-4: TCPIPConnection.send sent 16 bytes to 10.149.97.60 on port 5020 (7)
+10:48:31             Thread-4: TCPIPConnection.send exited
+10:48:31          Thread-4: Transmitter.send successfully sent pdu's data over connection (7)
+10:48:31          Thread-4: Transmitter.send exited
+10:48:31       Thread-4: Session.send(Request) exited
+10:48:31       Receiver-1: TCPIPConnection.receive read 16 bytes from socket (8)
+10:48:31       Receiver-1: TCPIPConnection.receive no more data remains in the socket (8)
+10:48:31       Receiver-1: TCPIPConnection.receive totally read 16 bytes from socket (7)
+10:48:31       Receiver-1: TCPIPConnection.receive exited
+10:48:31    Receiver-1: Receiver.run() trying to create pdu from unprocessed buffer (1)
+10:48:31    Receiver-1: Receiver.run() PDU.setData() parsing header 00000010800000150000000000000003 (5)
+10:48:31    Receiver-1: Receiver.run() PDU.setData() no data for body (5)
+10:48:31    Receiver-1: Receiver.run() received complete pdu(enquirelink_resp: (pdu: 16 80000015 0 3) )  (1)
+10:48:31    Receiver-1: Receiver.run() there is 0 bytes left in unprocessed buffer (1)
+10:48:31    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection finished (3)
+10:48:31    Receiver-1: Receiver.run() Receiver.receiveAsync(): PDU received, processing (enquirelink_resp: (pdu: 16 80000015 0 3) )  (1)
+10:48:31    Receiver-1: Receiver.run() receiver passing pdu to ServerPDUEventListener (1)
+10:48:31    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+10:48:31    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+10:48:31       Receiver-1: TCPIPConnection.receive entered
+10:48:31       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+10:48:31       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+10:48:35       Receiver-1: TCPIPConnection.receive read 16 bytes from socket (8)
+10:48:35       Receiver-1: TCPIPConnection.receive no more data remains in the socket (8)
+10:48:35       Receiver-1: TCPIPConnection.receive totally read 16 bytes from socket (7)
+10:48:35       Receiver-1: TCPIPConnection.receive exited
+10:48:35    Receiver-1: Receiver.run() trying to create pdu from unprocessed buffer (1)
+10:48:35    Receiver-1: Receiver.run() PDU.setData() parsing header 0000001000000015000000001e5c1e57 (5)
+10:48:35    Receiver-1: Receiver.run() PDU.setData() no data for body (5)
+10:48:35    Receiver-1: Receiver.run() received complete pdu(enquirelink: (pdu: 16 15 0 509353559) )  (1)
+10:48:35    Receiver-1: Receiver.run() there is 0 bytes left in unprocessed buffer (1)
+10:48:35    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection finished (3)
+10:48:35    Receiver-1: Receiver.run() Receiver.receiveAsync(): PDU received, processing (enquirelink: (pdu: 16 15 0 509353559) )  (1)
+10:48:35    Receiver-1: Receiver.run() receiver passing pdu to ServerPDUEventListener (1)
+10:48:35    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+10:48:35    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+10:48:35       Receiver-1: TCPIPConnection.receive entered
+10:48:35       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+10:48:35       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+10:48:35       Thread-7: Session.respond(Response) entered
+10:48:35       Thread-7: Session.respond(Response) Sending response (enquirelink_resp: (pdu: 0 80000015 0 509353559) )  (4)
+10:48:35          Thread-7: Transmitter.send entered
+10:48:35          Thread-7: Transmitter.send going to send pdu's data over connection (7)
+10:48:35          Thread-7: Transmitter.send PDU.getData() build up data 0000001080000015000000001e5c1e57 (5)
+10:48:35             Thread-7: TCPIPConnection.send entered
+10:48:35             Thread-7: TCPIPConnection.send sent 16 bytes to 10.149.97.60 on port 5020 (7)
+10:48:35             Thread-7: TCPIPConnection.send exited
+10:48:35          Thread-7: Transmitter.send successfully sent pdu's data over connection (7)
+10:48:35          Thread-7: Transmitter.send exited
+10:48:35       Thread-7: Session.respond(Response) exited

@@ -1,0 +1,15 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mwal="http://mwallet.fss.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <mwal:stock_transfer soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <in xsi:type="mwal:TransactionInput">
+            <username xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">$user_name</username>
+            <password xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">$encrypt_password</password>
+            <agentMsIsdn xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">$source_msisdn</agentMsIsdn>
+            <targetMsIsdn xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">$target_msisdn</targetMsIsdn>
+            <amount xsi:type="xsd:double">$amount</amount>
+            <counter xsi:type="xsd:int">$counter</counter>
+         </in>
+      </mwal:stock_transfer>
+   </soapenv:Body>
+</soapenv:Envelope>

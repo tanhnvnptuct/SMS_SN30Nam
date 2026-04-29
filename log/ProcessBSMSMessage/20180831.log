@@ -1,0 +1,67 @@
+31/08 10:09:01 Process Message BSMS started
+31/08 10:09:02 queue size: 0
+31/08 10:09:32 queue size: 1
+31/08 10:09:42 Decrypting --> 84941233764|HELLO|22268
+31/08 10:10:01 API Req: {"msisdn":{0},"content":{1}}
+31/08 10:10:22 Error occured: Connection timed out: connect
+31/08 10:10:52 queue size: 0
+31/08 10:11:22 queue size: 0
+31/08 10:11:52 queue size: 0
+31/08 10:12:22 queue size: 0
+31/08 10:12:52 queue size: 0
+31/08 10:13:23 queue size: 0
+31/08 10:13:53 queue size: 0
+31/08 10:14:23 queue size: 0
+31/08 10:14:53 queue size: 0
+31/08 10:15:23 queue size: 0
+31/08 10:16:36 Process Message BSMS started
+31/08 10:16:36 queue size: 0
+31/08 10:17:06 queue size: 1
+31/08 10:17:10 Decrypting --> 84941233764|HELLO|22268
+31/08 10:17:23 API Req: {"msisdn":84941233764,"content":HELLO}
+31/08 10:17:44 Error occured: Connection timed out: connect
+31/08 10:18:14 queue size: 1
+31/08 10:18:14 Decrypting --> 84941233764|HELLO|22268
+31/08 10:18:14 API Req: {"msisdn":84941233764,"content":HELLO}
+31/08 10:18:38 Process Message BSMS started
+31/08 10:18:38 queue size: 0
+31/08 10:19:03 Process Message BSMS stopped
+31/08 10:19:04 Process Message BSMS started
+31/08 10:19:04 queue size: 1
+31/08 10:19:04 Decrypting --> 84941233764|ABC|22268
+31/08 10:19:04 API Req: {"msisdn":"84941233764","content":"ABC"}
+31/08 10:19:25 Error occured: Connection timed out: connect
+31/08 10:19:30 queue size: 0
+31/08 10:19:35 queue size: 0
+31/08 10:19:40 queue size: 0
+31/08 10:19:46 queue size: 0
+31/08 10:19:51 queue size: 0
+31/08 10:19:56 queue size: 0
+31/08 10:20:01 queue size: 0
+31/08 10:20:06 queue size: 0
+31/08 10:20:11 queue size: 0
+31/08 10:20:16 queue size: 0
+31/08 10:20:21 queue size: 0
+31/08 10:20:26 queue size: 0
+31/08 10:20:31 queue size: 0
+31/08 10:20:36 queue size: 0
+31/08 10:20:41 queue size: 0
+31/08 10:20:46 queue size: 0
+31/08 10:20:51 queue size: 0
+31/08 10:20:56 queue size: 0
+31/08 10:21:01 queue size: 0
+31/08 10:21:06 queue size: 0
+31/08 10:21:11 queue size: 0
+31/08 10:21:16 queue size: 0
+31/08 10:21:21 queue size: 0
+31/08 10:21:26 queue size: 0
+31/08 10:21:31 queue size: 0
+31/08 10:21:36 queue size: 0
+31/08 10:21:41 queue size: 0
+31/08 10:21:46 queue size: 0
+31/08 10:21:51 queue size: 0
+31/08 10:21:56 queue size: 0
+31/08 10:22:01 queue size: 0
+31/08 10:22:07 queue size: 0
+31/08 10:22:12 queue size: 0
+31/08 10:22:17 queue size: 0

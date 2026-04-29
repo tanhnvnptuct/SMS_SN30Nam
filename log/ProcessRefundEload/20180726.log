@@ -1,0 +1,27 @@
+26/07 14:43:58 Process Refund Eload started
+26/07 15:06:45 Process Refund Eload started
+26/07 15:12:20 Process Refund Eload started
+26/07 15:16:13 Process Refund Eload started
+26/07 18:10:32 Process Refund Eload started
+26/07 18:10:32 Error occured: Value of 'counter' ('') must be a number
+Context: ManageableThread.loadInteger
+Additional info: counter
+26/07 18:12:07 Process Refund Eload started
+26/07 18:13:08 Process Refund Eload started
+26/07 18:13:43 Process Refund Eload started
+26/07 18:13:46 Error occured: Empty key
+26/07 18:13:51 Error occured: Empty key
+26/07 18:14:06 Error occured: Empty key
+26/07 18:14:40 Process Refund Eload started
+26/07 18:14:57 Error occured: Cannot perform fetch on a PLSQL statement: next
+26/07 18:19:06 Process Refund Eload started
+26/07 18:20:43 Process Refund Eload started
+26/07 18:26:52 Process Refund Eload started
+26/07 18:27:07 Process Refund Eload started
+26/07 18:28:00 Process Refund Eload started
+26/07 18:29:09 Process Refund Eload started
+26/07 18:29:28 Process Refund Eload started
+26/07 18:30:07 Process Refund Eload started
+26/07 18:30:43 Process Refund Eload started
+26/07 18:33:17 Process Refund Eload started
+26/07 18:33:40 Process Refund Eload started
