@@ -49,7 +49,6 @@ public class ProcessTraCuuMDTNew extends ManageableThreadEx{
 		
 		String sql_mdt_detail = "{ ? = call pkg_inquiry2.fi_MDT_Detail_By_CampaignId(?,?)}";
 		detailCalstmt = conn.prepareCall(sql_mdt_detail);
-
 		detailCalstmt.registerOutParameter(1, oracle.jdbc.OracleTypes.VARCHAR);
 		
 		preStmt = conn.prepareStatement("insert into winner.subs_prize_mo (id, msisdn, sms_content, campaign_id) values (winner.seq_subs_prize_mo.nextval, ?, ?, ?)");
@@ -83,8 +82,15 @@ public class ProcessTraCuuMDTNew extends ManageableThreadEx{
 		Properties prtDeliverSM = new Properties();
 		prtDeliverSM.put("DataType", "DeliverSM");
 		boolean exists = false;
+		
+		int batchSize = 0;
+		
+		CallableStatement ps = conn.prepareCall("insert into sms_quay_thuong "
+				+ "(id,msisdn,log_date,smo,status) values (seq_sms_quay_thuong.NEXTVAL,?,sysdate,?,0)");
+
 //		while (queueSize >= getThreadManagerEx().queueReceiver.getQueueSize()) {
 		while (getThreadManagerEx().queueReceiver.getQueueSize() > 0){
+			
 			ReceiveMessage receiveMessage = (ReceiveMessage) getThreadManagerEx().queueReceiver
 					.detach(prtDeliverSM);
 			if (receiveMessage != null) {
@@ -156,30 +162,33 @@ public class ProcessTraCuuMDTNew extends ManageableThreadEx{
 								Send_sms_resp(msisdn, sms_return, codeResponse,Integer.parseInt(mdtCount),sms_substring_1,sms_substring_n);
 							}	
 							
-							//bo sung tra cuu cho TTP cho CTKM moi
-							else if(cmd.equalsIgnoreCase("TTP")){
+							//bo sung tra cuu cho cho CTKM moi
+							else if(cmd.equalsIgnoreCase("30NAM")){
 								
-								CallableStatement TTPstm = conn.prepareCall("{ ? = call pkg_inquiry2.fi_TTP(?)}");
-								TTPstm.setString(2, callingNumber);
-								TTPstm.registerOutParameter(1, oracle.jdbc.OracleTypes.VARCHAR);
-								TTPstm.execute();
-								
-								String temp = TTPstm.getString(1);
-								
-								logMonitor("response TTP:" + temp);
-								
-								if (temp.equalsIgnoreCase ("NO DATA") )
-									Send_sms_resp(msisdn, sms_0_mdt, codeResponse,0,sms_substring_1,sms_substring_n);
-								else
-								{
-									String sms_return = "Thue bao cua Quy khach thuoc "+temp;
-									Send_sms_resp(msisdn, sms_return, codeResponse,0,sms_substring_1,sms_substring_n);
-								}
-									
-								
+								ps.setString(1, callingNumber);
+								ps.setString(2, cmd);
+//								ps.addBatch();
+								ps.execute();
+//								batchSize++;
+
+								logMonitor("30 Nam:" + callingNumber);
 								
 
 							}
+							
+							else if(cmd.equalsIgnoreCase("GIAITHUONG")){
+								String sql_prz_remain = "{ ? = call winner.PKG_INSTANTLOT.GET_PRIZE_REMAIN(?)}";
+								CallableStatement prz_remain_stmt = conn.prepareCall(sql_prz_remain);
+								prz_remain_stmt.registerOutParameter(1, oracle.jdbc.OracleTypes.VARCHAR);
+								prz_remain_stmt.setInt(2, 486);
+								prz_remain_stmt.execute();
+								String temp = prz_remain_stmt.getString(1);
+								logMonitor("Tra cuu GIAITHUONG:" + callingNumber);
+								Database.closeObject(prz_remain_stmt);
+								Send_sms_resp(msisdn, temp, codeResponse,0,0,0);
+
+							}
+							
 						}catch(Exception e){
 							logMonitor("Ex: " + e.getMessage() + "|" + e.getStackTrace());
 							Send_sms_resp(msisdn, sms_sys_err, codeResponse,0,0,0);
@@ -192,6 +201,9 @@ public class ProcessTraCuuMDTNew extends ManageableThreadEx{
 				}
 			}
 		}
+//		if (batchSize>0)
+//			ps.executeBatch();
+		
 		return exists;
 	}
 
