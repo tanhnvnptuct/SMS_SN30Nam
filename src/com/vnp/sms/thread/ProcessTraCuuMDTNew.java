@@ -3,9 +3,18 @@ package com.vnp.sms.thread;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
+import java.util.Random;
 import java.util.Vector;
 
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetEncoder;
+import java.nio.charset.StandardCharsets;
+import org.smpp.*;
+import org.smpp.pdu.*;
+import org.smpp.util.ByteBuffer;
 import com.fss.sql.Database;
 import com.fss.thread.ParameterType;
 import com.fss.thread.ParameterUtil;
@@ -36,7 +45,8 @@ public class ProcessTraCuuMDTNew extends ManageableThreadEx{
 	private CallableStatement calstmt = null;
 	private CallableStatement detailCalstmt = null;
 	private PreparedStatement preStmt = null;
-
+	private static int seq = 1;
+	private static int max_seq = 2147483647;
 	@Override
 	protected void beforeSession() throws Exception {
 		conn = AppServer.getConnection();
@@ -85,8 +95,8 @@ public class ProcessTraCuuMDTNew extends ManageableThreadEx{
 		
 		int batchSize = 0;
 		
-		CallableStatement ps = conn.prepareCall("insert into sms_quay_thuong "
-				+ "(id,msisdn,log_date,smo,status) values (seq_sms_quay_thuong.NEXTVAL,?,sysdate,?,0)");
+//		CallableStatement ps = conn.prepareCall("insert into sms_quay_thuong "
+//				+ "(id,msisdn,log_date,smo,status) values (seq_sms_quay_thuong.NEXTVAL,?,sysdate,?,0)");
 
 //		while (queueSize >= getThreadManagerEx().queueReceiver.getQueueSize()) {
 		while (getThreadManagerEx().queueReceiver.getQueueSize() > 0){
@@ -150,7 +160,8 @@ public class ProcessTraCuuMDTNew extends ManageableThreadEx{
 								if(Integer.parseInt(mdtCount) == 0){
 									//sms_return = sms_return.replaceAll("<mdt>", "");			
 									sms_return=sms_0_mdt;
-								}else if(Integer.parseInt(mdtCount) <= 10){
+								}
+								else if(Integer.parseInt(mdtCount) <= 10){
 									String tmp = temp.substring(temp.indexOf("|") + 1);
 									sms_return = sms_return.replaceAll("<mdt>", tmp.substring(tmp.indexOf("|") + 1).replaceAll("\\|", ","));
 								}else{
@@ -159,44 +170,33 @@ public class ProcessTraCuuMDTNew extends ManageableThreadEx{
 								}
 								
 								
-								Send_sms_resp(msisdn, sms_return, codeResponse,Integer.parseInt(mdtCount),sms_substring_1,sms_substring_n);
+								//Send_sms_resp(msisdn, sms_return, codeResponse);
+								Send_sms_resp_UTF16(msisdn, sms_return);
 							}	
 							
 							//bo sung tra cuu cho cho CTKM moi
-							else if(cmd.equalsIgnoreCase("30NAM")){
-								
-								ps.setString(1, callingNumber);
-								ps.setString(2, cmd);
-//								ps.addBatch();
-								ps.execute();
-//								batchSize++;
-
-								logMonitor("30 Nam:" + callingNumber);
-								
-
-							}
+//							else if(cmd.equalsIgnoreCase("30NAM")){
+//								
+//								ps.setString(1, callingNumber);
+//								ps.setString(2, cmd);
+////								ps.addBatch();
+//								ps.execute();
+////								batchSize++;
+//								logMonitor("30 Nam:" + callingNumber);
+//							}
 							
-							else if(cmd.equalsIgnoreCase("GIAITHUONG")){
-								String sql_prz_remain = "{ ? = call winner.PKG_INSTANTLOT.GET_PRIZE_REMAIN(?)}";
-								CallableStatement prz_remain_stmt = conn.prepareCall(sql_prz_remain);
-								prz_remain_stmt.registerOutParameter(1, oracle.jdbc.OracleTypes.VARCHAR);
-								prz_remain_stmt.setInt(2, 486);
-								prz_remain_stmt.execute();
-								String temp = prz_remain_stmt.getString(1);
-								logMonitor("Tra cuu GIAITHUONG:" + callingNumber);
-								Database.closeObject(prz_remain_stmt);
-								Send_sms_resp(msisdn, temp, codeResponse,0,0,0);
-
-							}
 							
 						}catch(Exception e){
 							logMonitor("Ex: " + e.getMessage() + "|" + e.getStackTrace());
-							Send_sms_resp(msisdn, sms_sys_err, codeResponse,0,0,0);
+							//Send_sms_resp(msisdn, sms_sys_err, codeResponse);
+							Send_sms_resp_UTF16(msisdn, sms_sys_err);
 						}
 					} // END COMMAND MESSAGE CONTENT
 					else {
-						Send_sms_resp(callingNumber.substring(2),
-								sms_sai_cu_phap, codeResponse,0,0,0);					
+//						Send_sms_resp(callingNumber.substring(2),
+//								sms_sai_cu_phap, codeResponse);		
+						Send_sms_resp_UTF16(callingNumber.substring(2),
+								sms_sai_cu_phap);		
 					}
 				}
 			}
@@ -207,48 +207,119 @@ public class ProcessTraCuuMDTNew extends ManageableThreadEx{
 		return exists;
 	}
 
-	public void Send_sms_resp(String msisdn, String Strtxt, String owner, int numofcodes, int substring_1, int substring_n) {
+	public void Send_sms_resp(String msisdn, String Strtxt, String owner) {
 		try {
-			if (Strtxt.length()>=220){
-				int substr = (numofcodes>1)?substring_n:substring_1;
-				
-				SubmitSM submitSM1 = new SubmitSM();
-				submitSM1.setShortMessage(Strtxt.substring(0,substr));
-				submitSM1.getSourceAddr().setAddress(owner);
-				submitSM1.getDestAddr().setAddress("84" + msisdn);
-				SubmitMessage submitMessage1 = new SubmitMessage(submitSM1, false);
-				
+			
+			int seqSize = 150;
+			int seqCount = Strtxt.length() / seqSize + (Strtxt.length() % seqSize == 0 ? 0 : 1);
+			List<String> messages = new ArrayList<String>();
+			for (int iSeq = 0; iSeq < seqCount; iSeq++) {
+				int start = iSeq * seqSize;
+				int end = Math.min((iSeq + 1) * seqSize, Strtxt.length());
 
-				getThreadManagerEx().queueSubmit.enqueue(submitMessage1);
-				logMonitor("[SEND_SMS1]" + msisdn + " with content: " + Strtxt.substring(0,substr));
-				
-				SubmitSM submitSM2 = new SubmitSM();
-				submitSM2.setShortMessage(Strtxt.substring(substr));
-				submitSM2.getSourceAddr().setAddress(owner);
-				submitSM2.getDestAddr().setAddress("84" + msisdn);
-				SubmitMessage submitMessage2 = new SubmitMessage(submitSM2, false);
-				
-
-				getThreadManagerEx().queueSubmit.enqueue(submitMessage2);
-				logMonitor("[SEND_SMS2]" + msisdn + " with content: " + Strtxt.substring(substr));
-				
+				String strbuff = Strtxt.substring(start, end);
+				messages.add(strbuff);
 			}
-			else{
+
+			short sarRef = (short) new Random().nextInt(255);
+			int messageSize = messages.size();
+			int orginSeq = 0;
+			
+			for (int i = 0; i < messageSize; i++) {
+				String strMsgBuff = messages.get(i);
+				
 				SubmitSM submitSM = new SubmitSM();
-				submitSM.setShortMessage(Strtxt);
+				submitSM.setShortMessage(strMsgBuff);
 				submitSM.getSourceAddr().setAddress(owner);
 				submitSM.getDestAddr().setAddress("84" + msisdn);
+				if (messageSize > 1) {
+					submitSM.setSarMsgRefNum(sarRef);
+					submitSM.setSarTotalSegments((short) messageSize);
+					submitSM.setSarSegmentSeqnum((short) (i + 1));
+	            }
+				submitSM.setDataCoding((byte) 0x08);
 				SubmitMessage submitMessage = new SubmitMessage(submitSM, false);
-				logMonitor("[SEND_SMS]" + msisdn + " with content: " + Strtxt);
-
 				getThreadManagerEx().queueSubmit.enqueue(submitMessage);
-				
+
 			}
 
-		
+			
+			
+//			SubmitSM submitSM = new SubmitSM();
+//			submitSM.setShortMessage(Strtxt);
+//			submitSM.getSourceAddr().setAddress(owner);
+//			submitSM.getDestAddr().setAddress("84" + msisdn);
+//			SubmitMessage submitMessage = new SubmitMessage(submitSM, false);
+			logMonitor("[SEND_SMS]" + msisdn + " with content: " + Strtxt);
+
+//			getThreadManagerEx().queueSubmit.enqueue(submitMessage);
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+
+	}
+	
+	
+	protected void Send_sms_resp_UTF16(String strIsdn, String strMessage) throws Exception {
+		try {
+			
+			while (getThreadManagerEx().queueSubmit.size() > 100000) {
+				Thread.sleep(100);
+				logMonitor("Queue full...");
+			}
+			Charset encode = onlyGSM7BitCharacter(strMessage);
+
+			byte coding = autoDataCoding(encode);
+
+			List<String> messages = new ArrayList<String>();
+
+
+			int seqSize = 134;
+			if (encode == Charset.forName(Data.ENC_UTF16_BE))
+				seqSize = 67;
+			else
+				seqSize = 150;
+
+			int seqCount = strMessage.length() / seqSize + (strMessage.length() % seqSize == 0 ? 0 : 1);
+			for (int iSeq = 0; iSeq < seqCount; iSeq++) {
+				int start = iSeq * seqSize;
+				int end = Math.min((iSeq + 1) * seqSize, strMessage.length());
+				String strbuff = strMessage.substring(start, end);
+				messages.add(strbuff);
+			}
+
+			short sarRef = (short) new Random().nextInt(255);
+			int messageSize = messages.size();
+
+			for (int i = 0; i < messageSize; i++) {
+				String strbuff = messages.get(i);
+				SubmitSM request = new SubmitSM();
+				request.getDestAddr().setAddress("84"+strIsdn);
+
+		        request.getSourceAddr().setAddress(codeResponse);
+
+				request.setShortMessage(strbuff,encode.name());
+				request.setDataCoding(coding);
+													
+				int newSeq = (seq++ % max_seq) + 1;
+				request.setSequenceNumber(newSeq);
+
+				if (messageSize > 1) {
+					request.setSarMsgRefNum(sarRef);
+					request.setSarTotalSegments((short) messageSize);
+					request.setSarSegmentSeqnum((short) (i + 1));
+				}
+
+				SubmitMessage submitMessage = new SubmitMessage(request, false);
+				getThreadManagerEx().queueSubmit.enqueue(submitMessage);
+			}
+			logMonitor("[SEND_SMS UTF16]" + strIsdn + " with content: " + strMessage);
+//			
+		} catch (Exception e) {
+			logMonitor("error when send sms for " + strIsdn + " with content " + strMessage + " Exception "
+					+ e.getMessage());
 		}
 
 	}
@@ -347,5 +418,23 @@ public class ProcessTraCuuMDTNew extends ManageableThreadEx{
 		vtReturn.addElement(createParameterDefinition("Prize", "", ParameterType.PARAM_TABLE, vtValue5, ""));
 		vtReturn.addAll(super.getParameterDefinition());
 		return vtReturn;
+	}
+	
+	public static Charset onlyGSM7BitCharacter(String strContent) {
+		CharsetEncoder encoder;
+		encoder = Charset.forName("ISO-8859-1").newEncoder();
+
+		if (encoder.canEncode(strContent)) {
+			return Charset.forName(Data.ENC_ISO8859_1);
+		} else {
+			return Charset.forName(Data.ENC_UTF16_BE);
+		}
+	}
+
+	private byte autoDataCoding(Charset encode) {
+		if (encode.equals(Charset.forName(Data.ENC_UTF16_BE)))
+			return ((byte) 0x08);
+		else
+			return ((byte) 0x00);// return ((byte) 0x00);
 	}
 }

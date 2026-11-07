@@ -5,8 +5,11 @@ import java.sql.ResultSet;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import java.util.Random;
 import java.util.Vector;
 
 import com.fss.sql.Database;
@@ -18,7 +21,7 @@ import com.logica.smpp.pdu.SubmitSM;
 import com.vnp.util.AppServer;
 import com.vnp.util.SubmitMessage;
 
-public class SendSMSFromDBNew2 extends ManageableThreadEx{
+public class SendSMSFromDBNew2 extends ManageableThreadEx {
 	private PreparedStatement psReadQueue;
 	private PreparedStatement psUpdateQueue;
 	private String mstrSender = "";
@@ -31,50 +34,53 @@ public class SendSMSFromDBNew2 extends ManageableThreadEx{
 	private String test_mode = "";
 	private int icount = 0;
 	private DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
-	private Date currentDate = new Date();		
+	private Date currentDate = new Date();
 
 	@Override
 	public void initPreparedStatement() throws Exception {
 		currentDate = new Date();
 		mstrCampaignId = "";
-		setupAcceptCampaign();		
-		if(mstrCampaignId.trim().equals("")){
+		setupAcceptCampaign();
+		if (mstrCampaignId.trim().equals("")) {
 			mstrCampaignId = "0";
-		}	
-		//mstrSqlGet = "select * from "+mstrTableSMSQueue+" partition(Part_"+dateFormat.format(currentDate)+") where status in (0, 2) and campaign_id in (" + mstrCampaignId + ") and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time";
-		mstrSqlGet = "select * from "+mstrTableSMSQueue+" where submit_time >= trunc(sysdate-1) and submit_time < trunc(sysdate+1) and status in (0, 2) and campaign_id in (" + mstrCampaignId + ") and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time";
+		}
+		// mstrSqlGet = "select * from "+mstrTableSMSQueue+"
+		// partition(Part_"+dateFormat.format(currentDate)+") where status in (0, 2) and
+		// campaign_id in (" + mstrCampaignId + ") and msisdn not in (select msisdn from
+		// blacklist) and rownum < 2000 order by submit_time";
+		mstrSqlGet = "select * from " + mstrTableSMSQueue
+				+ " where submit_time >= trunc(sysdate-1) and submit_time < trunc(sysdate+1) and status in (0, 2) and campaign_id in ("
+				+ mstrCampaignId
+				+ ") and msisdn not in (select msisdn from blacklist) and rownum < 2000 order by submit_time";
 		logMonitor("mstrSqlGet " + mstrSqlGet);
 		logMonitor("psUpdateQueue " + mstrSqlUpdate);
 		psReadQueue = mcnMain.prepareStatement(mstrSqlGet);
 		psUpdateQueue = mcnMain.prepareStatement(mstrSqlUpdate);
 	}
-	
+
 	private void setupAcceptCampaign() throws ParseException {
 		Calendar calendar = Calendar.getInstance();
-		for(Object obj : campaignParam){
+		for (Object obj : campaignParam) {
 			String campaignId = (String) ((Vector) obj).get(0);
 			String expireDate = (String) ((Vector) obj).get(1);
-			if(!campaignId.trim().equals("") && !expireDate.trim().equals("")){
+			if (!campaignId.trim().equals("") && !expireDate.trim().equals("")) {
 				Date exp = dateFormat.parse(expireDate);
 				calendar.setTime(exp);
 				calendar.add(Calendar.DAY_OF_YEAR, 1);
-				if(currentDate.before(calendar.getTime())){
+				if (currentDate.before(calendar.getTime())) {
 					mstrCampaignId = mstrCampaignId + campaignId + ",";
 				}
 			}
 		}
-		if(!mstrCampaignId.trim().equals("")) mstrCampaignId = mstrCampaignId.substring(0, mstrCampaignId.length() - 1);
+		if (!mstrCampaignId.trim().equals(""))
+			mstrCampaignId = mstrCampaignId.substring(0, mstrCampaignId.length() - 1);
 	}
 
 	@Override
 	protected void beforeSession() throws Exception {
 		mcnMain = AppServer.getConnection();
 		super.beforeSession();
-		
-		
-		
-		
-		
+
 		initPreparedStatement();
 	}
 
@@ -93,8 +99,8 @@ public class SendSMSFromDBNew2 extends ManageableThreadEx{
 		if (miThreadCommand != ThreadConstant.THREAD_STOP) {
 			try {
 				Database.closeObject(rs);
-				rs = psReadQueue.executeQuery();				
-				while (rs.next()) {		
+				rs = psReadQueue.executeQuery();
+				while (rs.next()) {
 					String rowid = rs.getString("id");
 					String msisdn = rs.getString("msisdn");
 					String content = rs.getString("sms_content");
@@ -107,16 +113,15 @@ public class SendSMSFromDBNew2 extends ManageableThreadEx{
 					}
 				}
 				mcnMain.commit();
-			}
-			finally {
+			} finally {
 				Database.closeObject(rs);
-			} 
-		}		
+			}
+		}
 	}
 
-	protected void submitMessage(String strIsdn, String strMessage) throws Exception {
-		try{
-			if(test_mode.equalsIgnoreCase("Y") && acceptIsdn.indexOf("|" + strIsdn + "|") < 0){
+	protected void submitMessage_bak(String strIsdn, String strMessage) throws Exception {
+		try {
+			if (test_mode.equalsIgnoreCase("Y") && acceptIsdn.indexOf("|" + strIsdn + "|") < 0) {
 				return;
 			}
 			while (getThreadManagerEx().queueSubmit.size() > 100000) {
@@ -129,10 +134,59 @@ public class SendSMSFromDBNew2 extends ManageableThreadEx{
 			submitSM.getSourceAddr().setAddress(mstrSender);
 			SubmitMessage submitMessage = new SubmitMessage(submitSM, false);
 			getThreadManagerEx().queueSubmit.enqueue(submitMessage);
-		}catch(Exception e){
+		} catch (Exception e) {
 			logMonitor("error when send sms for " + strIsdn + " with content " + strMessage);
 		}
-		
+
+	}
+
+	protected void submitMessage(String strIsdn, String strMessage) throws Exception {
+		try {
+			if (test_mode.equalsIgnoreCase("Y") && acceptIsdn.indexOf("|" + strIsdn + "|") < 0) {
+				return;
+			}
+			while (getThreadManagerEx().queueSubmit.size() > 100000) {
+				Thread.sleep(100);
+				logMonitor("Queue full...");
+			}
+
+			int seqSize = 150;
+			int seqCount = strMessage.length() / seqSize + (strMessage.length() % seqSize == 0 ? 0 : 1);
+			List<String> messages = new ArrayList<String>();
+			for (int iSeq = 0; iSeq < seqCount; iSeq++) {
+				int start = iSeq * seqSize;
+				int end = Math.min((iSeq + 1) * seqSize, strMessage.length());
+
+				String strbuff = strMessage.substring(start, end);
+				messages.add(strbuff);
+			}
+
+			short sarRef = (short) new Random().nextInt(255);
+			int messageSize = messages.size();
+			int orginSeq = 0;
+			for (int i = 0; i < messageSize; i++) {
+				String strMsgBuff = messages.get(i);
+				
+				SubmitSM submitSM = new SubmitSM();
+				submitSM.setShortMessage(strMsgBuff);
+				submitSM.getDestAddr().setAddress(strIsdn);
+				submitSM.getSourceAddr().setAddress(mstrSender);
+				if (messageSize > 1) {
+					submitSM.setSarMsgRefNum(sarRef);
+					submitSM.setSarTotalSegments((short) messageSize);
+					submitSM.setSarSegmentSeqnum((short) (i + 1));
+	            }
+				
+				SubmitMessage submitMessage = new SubmitMessage(submitSM, false);
+				getThreadManagerEx().queueSubmit.enqueue(submitMessage);
+
+			}
+
+			
+		} catch (Exception e) {
+			logMonitor("error when send sms for " + strIsdn + " with content " + strMessage);
+		}
+
 	}
 
 	public void fillParameter() throws AppException {
@@ -156,13 +210,12 @@ public class SendSMSFromDBNew2 extends ManageableThreadEx{
 
 	public Vector getParameterDefinition() {
 		Vector vtReturn = new Vector();
-		
+
 		Vector vtValue2 = new Vector();
-		vtValue2.addElement(ParameterUtil.createParameterDefinition(
-				"IDChuongTrinh", "", ParameterType.PARAM_TEXTBOX_MAX, "50",
-				""));
-		vtValue2.addElement(ParameterUtil.createParameterDefinition(
-				"ExpireDate", "", ParameterType.PARAM_TEXTBOX_MAX, "500", ""));		
+		vtValue2.addElement(ParameterUtil.createParameterDefinition("IDChuongTrinh", "",
+				ParameterType.PARAM_TEXTBOX_MAX, "50", ""));
+		vtValue2.addElement(
+				ParameterUtil.createParameterDefinition("ExpireDate", "", ParameterType.PARAM_TEXTBOX_MAX, "500", ""));
 		vtReturn.addElement(createParameterDefinition("CampaignId", "", ParameterType.PARAM_TABLE, vtValue2, ""));
 		vtReturn.addElement(createParameterDefinition("SqlUpdate", "", ParameterType.PARAM_TEXTBOX_MAX, "500", ""));
 		vtReturn.addElement(createParameterDefinition("TableSMSQueue", "", ParameterType.PARAM_TEXTBOX_MAX, "500", ""));

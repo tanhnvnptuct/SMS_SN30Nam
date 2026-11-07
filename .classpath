@@ -64,7 +64,6 @@
 	<classpathentry kind="lib" path="C:/Java/SMS_SN30Nam/lib/smartserver.jar"/>
 	<classpathentry kind="lib" path="C:/Java/SMS_SN30Nam/lib/smartservice.jar"/>
 	<classpathentry kind="lib" path="C:/Java/SMS_SN30Nam/lib/SMAServlet.jar"/>
-	<classpathentry kind="lib" path="C:/Java/SMS_SN30Nam/lib/smpp.jar"/>
 	<classpathentry kind="lib" path="C:/Java/SMS_SN30Nam/lib/sqljdbc4-2.0.jar"/>
 	<classpathentry kind="lib" path="C:/Java/SMS_SN30Nam/lib/trilead-ssh2-build213.jar"/>
 	<classpathentry kind="lib" path="C:/Java/SMS_SN30Nam/lib/velocity-1.7.jar"/>
@@ -74,5 +73,7 @@
 	<classpathentry kind="lib" path="C:/Java/SMS_SN30Nam/lib/xercesImpl.jar"/>
 	<classpathentry kind="lib" path="C:/Java/SMS_SN30Nam/lib/xmlsec-1.4.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Java/SMS_SN30Nam/lib/opensmpp-core-3.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Java/SMS_SN30Nam/lib/smpp.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
